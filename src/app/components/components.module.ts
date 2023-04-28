@@ -26,6 +26,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { DashboardProducterComponent } from '../modules/application/producter/dashboard-producter/dashboard-producter.component';
 import { ParametersComponent } from '../modules/application/prosumer/parameters/parameters.component';
 import { NgChartsModule } from 'ng2-charts';
+import { ContainerComponent } from '../modules/application/container/container.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { NgChartsModule } from 'ng2-charts';
         DashboardComponent,
         DashboardProducterComponent,
         ParametersComponent,
+        ContainerComponent
     ],
     imports: [
         CommonModule,

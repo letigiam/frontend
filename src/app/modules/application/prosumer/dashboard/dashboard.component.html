@@ -1,10 +1,10 @@
 <div id="body" class="m-auto mt-5 col-10">
-  <h3 class="mx-3 mb-4">CER</h3>
+  <h3 class="my-4">CER</h3>
   <!-- Accordion -->
   <div class="row mx-auto mb-4">
     <!-- * Prosumer -->
     <div class="m-auto col-sm-6 col-md-10 col-lg-10 mb-4">
-      <h4 class="mx-3 mb-4">Aggiungi Prosumer</h4>
+      <h3 class="my-4">Aggiungi Prosumer</h3>
       <form [formGroup]="type_of_Prosumer">
         <mat-accordion class="example-headers-align">
           <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
@@ -125,7 +125,7 @@
     <div class="m-auto col-sm-4 col-md-10 col-lg-10 mt-2">
       <hr>
       <!-- * Prosumer della comunità -->
-      <h3 class="mt-4 mb-4" *ngIf="prosumerArray.length > 0">Prosumer della comunità</h3>
+      <h3 class="my-4" *ngIf="prosumerArray.length > 0">Prosumer della comunità</h3>
       <mat-card class="mt-1 mb-4" *ngFor="let prosumer of prosumerArray">
         <mat-card-content>
           <div class="row">
