@@ -1,0 +1,30 @@
+<div class="m-auto center">
+    <div class="">
+        <!-- <h2 class="text-color ">Accedi</h2> -->
+        <div class="col-12 input-group center mb-3 p-2">
+            <form [formGroup]="loginForm" class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input class="text" matInput placeholder="Nome Utente" formControlName="username">
+                </mat-form-field>
+                <!-- <div class="d-flex justify-between"> -->
+                <mat-form-field class="example-full-width " appearance="fill">
+                    <input #password type="password" class="password position" matInput placeholder="Password"
+                        formControlName="password" required>
+                    <!-- <i class="float fa-solid fa-eye"></i> -->
+                </mat-form-field>
+                <span class="border right" id="basic-addon2" (click)="changePasswordInput(password)">
+                    <!-- <i class="fa-solid fa-eye"></i> -->
+                </span>
+
+                <!-- </div> -->
+
+
+                <div class="accedi">
+                    <button type="submit" class="btn button" href="home" (click)="login()">ACCEDI</button>
+                </div>
+                <!-- <a href="recovery-password" class='register'>Password dimenticata?</a>
+                <a href="registrer" class='register'>Registrati</a> -->
+            </form>
+        </div>
+    </div>
+</div>

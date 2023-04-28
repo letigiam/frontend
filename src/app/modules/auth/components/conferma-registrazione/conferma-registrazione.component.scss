@@ -1,0 +1,37 @@
+.center {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    margin: auto;
+    padding: 5rem;
+}
+
+.text-color {
+    text-align: center;
+}
+
+.textgray {
+    text-align: center;
+    color: gray;
+}
+
+.textmail {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.home-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+a {
+    color: #194d6f
+}
+
+a:hover {
+    color: var(--color-secundary);
+}

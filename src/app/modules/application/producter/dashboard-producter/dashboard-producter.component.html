@@ -1,0 +1,101 @@
+<div class="m-auto mt-5 col-10">
+  <h3 class="mx-3 mb-4">CER</h3>
+  <!-- Accordion -->
+  <div class="row mx-auto mb-4">
+
+    <!-- * Produttore -->
+    <div class="col-6 mb-4">
+      <h4 class="mx-3 mb-4">Aggiungi Produttore</h4>
+      <form [formGroup]="form_type_of_Producter">
+        <mat-accordion class="example-headers-align">
+          <mat-expansion-panel [expanded]="go === 0" (opened)="goStep(0)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Nome Produttore
+              </mat-panel-title>
+              <mat-panel-description>
+
+                <span></span>
+                <mat-icon> business</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="space">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput class="example-full-width" formControlName="name_prod">
+              </mat-form-field>
+            </div>
+
+            <mat-action-row>
+              <button mat-button class="btn btn-success" (click)="nextGo()">Avanti</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="go === 1" (opened)="goStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Tipologia di Produttore
+              </mat-panel-title>
+              <mat-panel-description>
+                <!-- Type the country name -->
+                <span></span>
+                <mat-icon>assistant_photo</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="space">
+              <mat-form-field appearance="fill">
+                <mat-label>Tipo di Prosumer</mat-label>
+                <mat-select formControlName="type_of_Producter">
+                  <mat-option *ngFor="let type of type_of_Producter" [value]="type">{{type}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <br>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Potenza [kW]</mat-label>
+                <input matInput type="number" width="50%" formControlName="prod_energy">
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="fill">
+                <mat-label>Data di allaccio (indicativa)</mat-label>
+                <input matInput type="date" formControlName="date">
+              </mat-form-field>
+              <mat-datepicker #picker></mat-datepicker>
+            </div>
+
+            <mat-action-row>
+              <button mat-button class="btn btn-secondary me-2" (click)="prevGo()">indietro</button>
+              <button mat-button class="btn btn-success" disabled="!form_type_of_Producter.valid"
+                (click)="saveProd(); nextGo()">Salva</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+        </mat-accordion>
+      </form>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-6">
+      <!-- * Produttori della comunità -->
+      <h3 class="ms-3 mt-4 mb-4" *ngIf="producterArray.length > 0">Produttori della comunità</h3>
+      <mat-card class="ms-3 mt-1" *ngFor="let producer of producterArray">
+        <mat-card-content>
+          <div class="row">
+            <div class="col-sm-4 col-md-8 col-lg-10">
+              <span>{{producer.name_prod}} - {{producer.type_of_Producter}} - {{producer.prod_energy}} kW -
+                {{getFormattedDate(producer.date, 'DD/MM/yyyy')}}</span>
+            </div>
+            <div class="col d-flex justify-content-end">
+              <mat-icon (click)="getProducer(producer);prevGo()"> border_color</mat-icon>
+            </div>
+            <div class="col d-flex justify-content-between">
+              <mat-icon (click)="deleteProd(producer.id)">delete</mat-icon>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

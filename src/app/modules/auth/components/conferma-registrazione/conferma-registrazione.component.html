@@ -1,0 +1,25 @@
+<div class="m-auto center">
+    <div class="">
+        <h2 class="text-color ">Controlla la tua e-mail</h2>
+        <h4 class="text-color ">Abbiamo inviato un link alla tua Email</h4>
+        <!-- <div class="container-fluid">
+            <img class="cent" src="assets\img\email.png">
+          </div> -->
+        <div class="home-banner">
+            <div class="banner-container">
+                <img class="cent" src="assets\img\email.png">
+            </div>
+        </div>
+        <br><br>
+        <h4 class="textgray">Non hai ricevuto nessuna e-mail?<br>
+            Controlla nella cartella di spam<br>
+            Oppure</h4>
+        <div class="col-12 input-group center mb-3 p-2">
+            <h5 class="textmail "><a href="recovery-password">Prova con un'altra e-mail</a></h5>
+        </div>
+
+        <div class="col-12 text-center" *ngIf="emailResended">
+            <h5>Abbiamo inviato un altra email controlla la tua casella postale</h5>
+        </div>
+    </div>
+</div>

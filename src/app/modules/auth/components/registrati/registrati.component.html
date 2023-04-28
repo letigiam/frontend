@@ -1,0 +1,51 @@
+<div class="m-auto center">
+    <div class="">
+        <h2 class="text-color ">Registrati</h2>
+        <div class="col-12 input-group center mb-3 p-2">
+            <form class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input type="text" class="text" matInput placeholder="Nome Utente" formControlName="name" required>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input type="text" class="text" matInput placeholder="Cognome" formControlName="lastname" required>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input type="text" class="text" matInput placeholder="Username" formControlName="username" required>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input type="email" class="text" matInput placeholder="email" formControlName="email" required>
+                </mat-form-field>
+                <!-- <div class="message" *ngIf="registerForm.controls.email.errors?.pattern">
+                    Email non valida
+                </div> -->
+
+                <mat-form-field class="example-full-width " appearance="fill">
+                    <input #password type="password" class="password position" matInput placeholder="Password"
+                        formControlName="password" required>
+                    <!-- <i class="float fa-solid fa-eye"></i> -->
+                </mat-form-field>
+                <span class="border right" id="basic-addon2" (click)="changePasswordInput(password)">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
+
+                <mat-form-field class="example-full-width " appearance="fill">
+                    <input #password_confirmation type="password" class="password position" matInput
+                        placeholder="Conferma Password" formControlName="password_confirmation" required>
+                    <!-- <i class="float fa-solid fa-eye"></i> -->
+                </mat-form-field>
+                <span class="border right" id="basic-addon2" (click)="changePasswordInput(password_confirmation)">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
+
+
+                <div class="accedi">
+                    <button type="submit" class="btn button">REGISTRATI</button>
+                </div>
+                <a href="login" class='register'>Torna alla login</a>
+            </form>
+        </div>
+    </div>
+</div>

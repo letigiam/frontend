@@ -1,0 +1,181 @@
+<div class="m-auto mt-5 col-10">
+  <h3 class="mx-3 mb-4">CER</h3>
+  <!-- Accordion -->
+  <div class="row mx-auto mb-4">
+    <!-- * Prosumer -->
+    <div class="col-sm-6 col-md-10 col-lg-10 mb-4">
+      <h4 class="mx-3 mb-4">Aggiungi Prosumer</h4>
+      <form [formGroup]="type_of_Prosumer">
+        <mat-accordion class="example-headers-align">
+          <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Nome Prosumer
+              </mat-panel-title>
+              <mat-panel-description>
+
+                <span></span>
+                <mat-icon>account_circle</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="space">
+              <mat-form-field class="example-full-width me-3" appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput class="example-full-width" formControlName="name">
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" class="example-full-width me-3">
+                <mat-label>Tipo di Prosumer</mat-label>
+                <mat-select formControlName="type_of_ProsumerList">
+                  <mat-option *ngFor="let type of type_of_ProsumerList" [value]="type">{{type}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Tipologia di Produttore </mat-label>
+                <mat-select formControlName="type_of_Producter">
+                  <mat-option *ngFor="let type of type_of_Producter" selected [value]="type">{{type}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <mat-action-row>
+              <button mat-button class="btn btn-success" (click)="nextStep()">Avanti</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Impianto di produzione
+              </mat-panel-title>
+              <mat-panel-description>
+                <!-- Type the country name -->
+                <span></span>
+                <mat-icon>assistant_photo</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="space">
+
+              <mat-form-field appearance="fill" class="example-full-width me-3">
+                <mat-label>Potenza [kW]</mat-label>
+                <input type="number" matInput formControlName="type_of_energy" required>
+              </mat-form-field>
+              <!-- <br> -->
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Numero di pannelli</mat-label>
+                <input matInput type="number" formControlName="number_of_panels" required>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width  ms-4" appearance="fill">
+                <mat-label>Superficie disponibile</mat-label>
+                <input matInput type="number" formControlName="available_surface" required>
+              </mat-form-field>
+            </div>
+
+            <mat-action-row>
+              <button mat-button class="btn btn-secondary me-2" (click)="prevStep()">indietro</button>
+              <button mat-button class="btn btn-success" (click)="nextStep()">Avanti</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Consumi
+              </mat-panel-title>
+              <mat-panel-description>
+
+                <span></span>
+                <mat-icon>brightness_6</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="space">
+              <mat-form-field appearance="fill">
+                <mat-label>Profilo di consumo</mat-label>
+                <mat-select formControlName="type_of_consumeList" required>
+                  <mat-option *ngFor="let type of type_of_consumeList" [value]="type">{{type}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="fill" class="example-full-width ms-4">
+                <mat-label>Classe Energetica</mat-label>
+                <mat-select formControlName="energy_ratingList" required>
+                  <mat-option *ngFor="let type of energy_ratingList" [value]="type">{{type}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <mat-action-row>
+              <button mat-button class="btn btn-secondary me-2" (click)="prevStep()">indietro</button>
+              <button mat-button class="btn btn-success" (click)="saveProsumer();nextStep()"
+                [disabled]="!type_of_Prosumer.valid">Salva</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+        </mat-accordion>
+      </form>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row mx-auto mb-4">
+    <div class="col">
+      <!-- * Prosumer della comunità -->
+      <h3 class="mt-4 mb-4" *ngIf="prosumerArray.length > 0">Prosumer della comunità</h3>
+      <mat-card class="mt-1 mb-4" *ngFor="let prosumer of prosumerArray">
+        <mat-card-content>
+          <div class="row">
+            <div class="col-sm-4 col-md-10 col-lg-10 mt-2">
+              <!--  -->
+              <span>{{prosumer.name}} - {{prosumer.type_of_Producter}} - {{prosumer.type_of_ProsumerList}} -
+                {{prosumer.type_of_consumeList}} - {{prosumer.energy_ratingList}} - {{prosumer.type_of_energy}} kW -
+                Numero di pannelli: {{prosumer.number_of_panels}} - Sup. Disponibile: {{prosumer.available_surface}} (in
+                mq)
+              </span>
+            </div>
+            <div class="col d-flex justify-content-end mt-2">
+              <mat-icon (click)="getProsumer(prosumer);prevStep()"> border_color</mat-icon>
+            </div>
+            <div class="col d-flex justify-content-between mt-2">
+              <mat-icon (click)="deleteProsumer(prosumer.id)">delete</mat-icon>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <!-- * PARAMETERI -->
+  <!-- <div *ngIf="prosumerArray.length > 0">
+    <hr>
+    <div class="row">
+      <div class="col-10 mt-2">
+        <h3 class="ms-3 mt-4 mb-4">Parametri</h3>
+      </div>
+      <div class="col-2 d-flex justify-content-end mt-4 mb-4">
+        <button mat-button class="btn btn-success" (click)=showChart()><a href="#arrivo"></a>
+          Simula</button>
+      </div>
+    </div>
+    <mat-card class="ms-3 mt-1">
+      <mat-card-content>
+        <div class="row">
+          <div class="col-10 mt-1">
+            <span><b>TRASe BT:</b> 12.00 €/MWh - <b>BTAU:</b> 2.00 €/MWh - <b>CPR:</b> 2.0% -
+              <b> Contributi in conto capitale:</b> 1% - <b>Prezzo zonale orario:</b> Annuale</span>
+          </div>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div> -->
+
+  <!-- * Simulazione -->
+  <div *ngIf="prosumerArray.length > 0">
+    <!-- <hr> -->
+    <app-parameters [prosumerArray]="prosumerArray"></app-parameters>
+  </div>
+</div>

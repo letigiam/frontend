@@ -1,0 +1,123 @@
+.size {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.grey {
+    color: #8d8d8d;
+}
+
+.selected {
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.buttonspace {
+    display: flex;
+    justify-content: start;
+    width: 35%;
+
+}
+
+.status {
+    cursor: pointer;
+
+    :hover {
+        color: black;
+    }
+}
+
+.blu {
+    background-color: #063e64;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.blu:hover {
+    background-color: #fff;
+    color: #063e64;
+    border-color: #063e64;
+}
+
+.griggio {
+    background-color: lightgray;
+    color: #063e64;
+    text-transform: uppercase;
+}
+
+.griggio:hover {
+    background-color: #fff;
+    color: #063e64;
+    border-color: #8d8d8d;
+}
+
+.rosso {
+    background-color: red;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.rosso:hover {
+    background-color: #fff;
+    color: red;
+    border-color: red;
+}
+
+.title {
+    float: left;
+}
+
+.text {
+    text-transform: capitalize;
+}
+
+.search {
+    float: right;
+}
+
+
+.annulla {
+    background-color: lightgray;
+    color: #063e64;
+    text-transform: uppercase;
+}
+
+.elimina {
+    background-color: red;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.modal-content {
+
+    display: flex;
+    align-items: center;
+    width: 80%;
+    // height: 100px;
+    justify-content: center;
+    margin: auto;
+    padding: 5rem;
+
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgb(255 255 255 / 4%) !important;
+}
+
+::ng-deep .mat-cell,
+.mat-footer-cell {
+    color: var(--color-primary);
+}
+
+.cursor {
+    cursor: pointer;
+}
