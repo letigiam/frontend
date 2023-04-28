@@ -120,6 +120,10 @@ a {
     margin-top: 2rem;
 }
 
+#body {
+    background-color: #fff;
+    border-radius: 20px;
+}
 
 .wdt {
     width: 10%;
@@ -133,6 +137,25 @@ a {
     color: black;
 }
 
+
+.button {
+    background-color: #1da583;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 16px !important;
+}
+
+.button-secondary {
+    background-color: #848584;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 16px !important;
+}
+
 ::ng-deep .mat-expansion-panel-body {
     padding: 0 40px 18px 0px !important;
+}
+
+.fontSize {
+    font-size: 12px;
 }
