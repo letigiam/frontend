@@ -34,7 +34,10 @@
             </div>
 
             <mat-action-row>
+
+              <button mat-button class="btn button-secondary me-2" (click)="clearForm()" *ngIf="modify">Resetta</button>
               <button mat-button class="btn button" (click)="nextGo()">Avanti</button>
+
             </mat-action-row>
           </mat-expansion-panel>
 
@@ -65,7 +68,10 @@
             <mat-action-row>
               <button mat-button class="btn button-secondary me-2" (click)="prevGo()">indietro</button>
               <button mat-button class="btn button" [disabled]="!form_type_of_Producter.valid"
-                (click)="saveProd(); nextGo()">Salva</button>
+                *ngIf="!modify; else modifica" (click)="saveProd(); nextGo()">Salva</button>
+              <ng-template #modifica>
+                <button mat-button class="btn button" (click)="modifyProd(); nextGo()">Modifica</button>
+              </ng-template>
             </mat-action-row>
           </mat-expansion-panel>
 
@@ -83,8 +89,7 @@
         <mat-card-content>
           <div class="row">
             <div class="col-sm-4 col-md-10 col-lg-10 mt-2">
-              <span>{{producer.name_prod}} - {{producer.type_of_Producter}} - {{producer.prod_energy}} kW -
-                {{getFormattedDate(producer.date, 'DD/MM/yyyy')}}</span>
+              <span>{{producer.name_prod}} - {{producer.type_of_Producter}} - {{producer.prod_energy}} kW</span>
             </div>
             <div class="col d-flex justify-content-end">
               <mat-icon (click)="getProducer(producer);prevGo()"> border_color</mat-icon>

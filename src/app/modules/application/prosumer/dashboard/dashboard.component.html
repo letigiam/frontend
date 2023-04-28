@@ -41,6 +41,7 @@
             </div>
 
             <mat-action-row>
+              <button mat-button class="btn button-secondary me-2" (click)="clearForm()" *ngIf="modify">Resetta</button>
               <button mat-button class="btn button" (click)="nextStep()">Avanti</button>
             </mat-action-row>
           </mat-expansion-panel>
@@ -110,8 +111,11 @@
 
             <mat-action-row>
               <button mat-button class="btn button-secondary me-2" (click)="prevStep()">indietro</button>
-              <button mat-button class="btn button" (click)="saveProsumer();nextStep()"
+              <button mat-button class="btn button" (click)="saveProsumer();nextStep()" *ngIf="!modify; else modifica"
                 [disabled]="!type_of_Prosumer.valid">Salva</button>
+              <ng-template #modifica>
+                <button mat-button class="btn button" (click)="modifyProd(); nextStep()">Modifica</button>
+              </ng-template>
             </mat-action-row>
           </mat-expansion-panel>
 

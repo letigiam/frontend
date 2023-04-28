@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,6 +13,7 @@ export class DashboardProducterComponent implements OnInit {
 
   go = 0;
   id = 0;
+  modify = false;
   form_type_of_Producter: FormGroup | any;
   type_of_Producter: string[] = ['Fotovoltaico'];
   type_of_Prosumer: FormGroup | any;
@@ -25,9 +26,9 @@ export class DashboardProducterComponent implements OnInit {
   ) {
     this.form_type_of_Producter = this.fb.group({
       id: '',
-      name_prod: '',
+      name_prod: ['', Validators.required],
       type_of_Producter: 'Fotovoltaico',
-      prod_energy: '',
+      prod_energy: ['', Validators.required],
       date: moment().format('YYYY-MM-DD'),
     });
 
@@ -57,6 +58,7 @@ export class DashboardProducterComponent implements OnInit {
   }
 
   getProducer(element: any) {
+    this.modify = true;
     this.form_type_of_Producter.patchValue({
       id: element.id,
       name_prod: element.name_prod,
@@ -81,9 +83,24 @@ export class DashboardProducterComponent implements OnInit {
       this.producterArray.push(this.form_type_of_Producter.value);
       console.log('presumer', this.form_type_of_Producter.value);
 
-      this.type_of_Prosumer.reset();
+      this.form_type_of_Producter.reset();
     },
       2000);
+  }
+
+  // ripulisce il form
+  clearForm() {
+    this.modify = false;
+    this.form_type_of_Producter.reset();
+  }
+
+  // modifica il form precedente
+  modifyProd() {
+    this.modify = true;
+    this.producterArray.forEach((element, index) => {
+      if (element.id == this.form_type_of_Producter.value.id) this.producterArray.splice(index, 1);
+    });
+    this.producterArray.push(this.form_type_of_Producter.value);
   }
 
   /**

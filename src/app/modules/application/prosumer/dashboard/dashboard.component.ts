@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  modify = false;
   step = 0;
   id = 0;
   show = false;
@@ -97,6 +98,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getProsumer(element: any) {
+    this.modify = true;
     this.type_of_Prosumer.patchValue({
       id: element.id,
       name: element.name,
@@ -110,6 +112,21 @@ export class DashboardComponent implements OnInit {
       energy_ratingList: element.energy_ratingList,
     });
     this.step = 0 ? 0 : 1;
+  }
+
+  // ripulisce il form
+  clearForm() {
+    this.modify = false;
+    this.type_of_Prosumer.reset();
+  }
+
+  // modifica il form precedente
+  modifyProd() {
+    this.modify = true;
+    this.prosumerArray.forEach((element, index) => {
+      if (element.id == this.type_of_Prosumer.value.id) this.prosumerArray.splice(index, 1);
+    });
+    this.prosumerArray.push(this.type_of_Prosumer.value);
   }
 
   /**
