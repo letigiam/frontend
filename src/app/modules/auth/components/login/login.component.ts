@@ -11,6 +11,9 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup | any;
   eye: any;
+  showPassword = false;
+  input: any;
+
   constructor(
     public fb: FormBuilder,
     private router: Router,
@@ -26,7 +29,13 @@ export class LoginComponent implements OnInit {
   }
 
   changePasswordInput(input: any): any {
-    input.type = input.type === 'password' ? 'text' : 'password';
+    this.showPassword = !this.showPassword;
+    input.type = this.showPassword ? 'text' : 'password';
+    let elem = document.getElementById('eye');
+    elem?.classList.toggle('fa-eye');
+    elem?.classList.toggle('fa-eye-slash');
+
+    // input.type = input.type === 'password' ? 'text' : 'password';
     // this.eye = input.type;
   }
 
