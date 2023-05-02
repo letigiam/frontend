@@ -123,10 +123,30 @@ export class DashboardComponent implements OnInit {
   // modifica il form precedente
   modifyProd() {
     this.modify = true;
-    this.prosumerArray.forEach((element, index) => {
-      if (element.id == this.type_of_Prosumer.value.id) this.prosumerArray.splice(index, 1);
-    });
-    this.prosumerArray.push(this.type_of_Prosumer.value);
+    // this.prosumerArray.forEach((element, index) => {
+    //   if (element.id == this.type_of_Prosumer.value.id) this.prosumerArray.splice(index, 1);
+    // });
+    let array: any;
+    array = this.prosumerArray.findIndex(obj => {
+      if (obj.id == this.type_of_Prosumer.value.id) {
+        obj.name = this.type_of_Prosumer.value.name,
+          obj.type_of_ProsumerList = this.type_of_Prosumer.value.type_of_ProsumerList,
+          obj.type_of_Producter = this.type_of_Prosumer.value.type_of_Producter,
+          obj.type_of_energy = this.type_of_Prosumer.value.type_of_energy,
+          obj.number_of_panels = this.type_of_Prosumer.value.number_of_panels,
+          obj.available_surface = this.type_of_Prosumer.value.available_surface,
+          obj.type_of_consumeList = this.type_of_Prosumer.value.type_of_consumeList,
+          obj.energy_ratingList = this.type_of_Prosumer.value.energy_ratingList;
+      }
+      Swal.fire({
+        icon: 'success',
+        title: '<div style="font-size:18px;">Prosumer Modificato</div>',
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      return array;
+
+    })
   }
 
   /**

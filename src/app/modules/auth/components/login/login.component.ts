@@ -10,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup | any;
+  eye: any;
   constructor(
     public fb: FormBuilder,
     private router: Router,
