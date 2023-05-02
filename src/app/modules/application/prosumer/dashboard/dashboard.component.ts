@@ -145,7 +145,6 @@ export class DashboardComponent implements OnInit {
         timer: 2000,
       });
       return array;
-
     })
   }
 

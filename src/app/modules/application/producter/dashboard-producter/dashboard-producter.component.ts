@@ -97,10 +97,25 @@ export class DashboardProducterComponent implements OnInit {
   // modifica il form precedente
   modifyProd() {
     this.modify = true;
-    this.producterArray.forEach((element, index) => {
-      if (element.id == this.form_type_of_Producter.value.id) this.producterArray.splice(index, 1);
-    });
-    this.producterArray.push(this.form_type_of_Producter.value);
+    // this.producterArray.forEach((element, index) => {
+    //   if (element.id == this.form_type_of_Producter.value.id) this.producterArray.splice(index, 1);
+    // });
+    // this.producterArray.push(this.form_type_of_Producter.value);
+    let array: any;
+    array = this.producterArray.findIndex(obj => {
+      if (obj.id == this.form_type_of_Producter.value.id) {
+        obj.name_prod = this.form_type_of_Producter.value.name_prod,
+          obj.type_of_Producter = this.form_type_of_Producter.value.type_of_Producter,
+          obj.prod_energy = this.form_type_of_Producter.value.prod_energy;
+      }
+      Swal.fire({
+        icon: 'success',
+        title: '<div style="font-size:18px;">Prosumer Modificato</div>',
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      return array;
+    })
   }
 
   /**
