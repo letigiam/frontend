@@ -11,11 +11,13 @@ import Swal from 'sweetalert2';
 })
 export class DashboardProducterComponent implements OnInit {
 
+  check: any;
   go = 0;
   id = 0;
   modify = false;
   form_type_of_Producter: FormGroup | any;
   type_of_Producter: string[] = ['Fotovoltaico'];
+  zone: string[] = ['Nord', 'Centro', 'Sud'];
   type_of_Prosumer: FormGroup | any;
   producterArray = new Array();
 
@@ -29,7 +31,9 @@ export class DashboardProducterComponent implements OnInit {
       name_prod: ['', Validators.required],
       type_of_Producter: 'Fotovoltaico',
       prod_energy: ['', Validators.required],
-      date: moment().format('YYYY-MM-DD'),
+      zone: ['', Validators.required],
+      capacity: '',
+      // date: moment().format('YYYY-MM-DD'),
     });
 
     this.producterArray = [{
@@ -37,7 +41,9 @@ export class DashboardProducterComponent implements OnInit {
       name_prod: 'Produttore 1',
       type_of_Producter: 'Fotovoltaico',
       prod_energy: 10,
-      date: '2017/02/05'
+      zone: 'Sud',
+      capacity: 54,
+      // date: '2017/02/05'
     }];
   }
 
@@ -57,14 +63,20 @@ export class DashboardProducterComponent implements OnInit {
     this.go--;
   }
 
+  checkStorage(event: any) {
+    this.check = event.target.checked;
+  }
+
   getProducer(element: any) {
     this.modify = true;
     this.form_type_of_Producter.patchValue({
       id: element.id,
       name_prod: element.name_prod,
+      zone: element.zone,
       type_of_Producter: element.type_of_Producter,
       prod_energy: element.prod_energy,
-      date: moment(element.date).format('YYYY-MM-DD'),
+      capacity: element.capacity,
+      // date: moment(element.date).format('YYYY-MM-DD'),
     });
     this.go = 0 ? 0 : 1;
   }
@@ -79,10 +91,7 @@ export class DashboardProducterComponent implements OnInit {
       timer: 1000,
     });
     setTimeout(() => {
-
       this.producterArray.push(this.form_type_of_Producter.value);
-      console.log('presumer', this.form_type_of_Producter.value);
-
       this.form_type_of_Producter.reset();
     },
       2000);
@@ -105,8 +114,10 @@ export class DashboardProducterComponent implements OnInit {
     array = this.producterArray.findIndex(obj => {
       if (obj.id == this.form_type_of_Producter.value.id) {
         obj.name_prod = this.form_type_of_Producter.value.name_prod,
+          obj.zone = this.form_type_of_Producter.value.zone,
           obj.type_of_Producter = this.form_type_of_Producter.value.type_of_Producter,
-          obj.prod_energy = this.form_type_of_Producter.value.prod_energy;
+          obj.prod_energy = this.form_type_of_Producter.value.prod_energy,
+          obj.capacity = this.form_type_of_Producter.value.capacity;
       }
       Swal.fire({
         icon: 'success',

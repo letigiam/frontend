@@ -11,7 +11,7 @@
           <mat-expansion-panel [expanded]="go === 0" (opened)="goStep(0)" hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Nome Produttore
+                Dati generali
               </mat-panel-title>
               <mat-panel-description>
 
@@ -21,16 +21,24 @@
             </mat-expansion-panel-header>
 
             <div class="space">
-              <mat-form-field class="example-full-width  me-3" appearance="fill">
-                <mat-label class="fontSize">Name</mat-label>
+              <mat-form-field class="example-full-width me-3" appearance="fill">
+                <mat-label class="fontSize">Name del produttore</mat-label>
                 <input matInput class="example-full-width" formControlName="name_prod">
               </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label class="fontSize">Tipo di Prosumer</mat-label>
+
+              <mat-form-field class="example-full-width me-3" appearance="fill">
+                <mat-label class="fontSize">Zona di appertenenza</mat-label>
+                <mat-select formControlName="zone" required>
+                  <mat-option *ngFor="let type of zone" [value]="type">{{type}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <!-- <mat-form-field appearance="fill">
+                <mat-label class="fontSize">Tipo produttore</mat-label>
                 <mat-select formControlName="type_of_Producter">
                   <mat-option *ngFor="let type of type_of_Producter" [value]="type">{{type}}</mat-option>
                 </mat-select>
-              </mat-form-field>
+              </mat-form-field> -->
             </div>
 
             <mat-action-row>
@@ -44,7 +52,7 @@
           <mat-expansion-panel [expanded]="go === 1" (opened)="goStep(1)" hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Tipologia di Produttore
+                Impianto di produzione
               </mat-panel-title>
               <mat-panel-description>
                 <!-- Type the country name -->
@@ -53,11 +61,25 @@
               </mat-panel-description>
             </mat-expansion-panel-header>
             <div class="space">
-              <mat-form-field class="example-full-width" appearance="fill">
+              <mat-form-field class="example-full-width me-3" appearance="fill">
                 <mat-label class="fontSize">Potenza [kW]</mat-label>
                 <input matInput type="number" width="50%" formControlName="prod_energy">
               </mat-form-field>
-              <br>
+              <!-- <br> -->
+              <mat-form-field appearance="fill" class="example-full-width me-3">
+                <mat-label class="fontSize">Tipo produttore</mat-label>
+                <mat-select formControlName="type_of_Producter">
+                  <mat-option *ngFor="let type of type_of_Producter" [value]="type">{{type}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <span>
+                Stoccaggio? <input type="checkbox" class="me-3" (click)="checkStorage($event)">
+                <mat-form-field class="example-full-width me-3" appearance="fill" *ngIf="check">
+                  <mat-label class="fontSize">Capacità [kW]</mat-label>
+                  <input matInput type="number" width="50%" formControlName="capacity">
+                </mat-form-field>
+              </span>
               <!-- <mat-form-field appearance="fill">
                 <mat-label>Data di allaccio (indicativa)</mat-label>
                 <input matInput type="date" formControlName="date">
@@ -89,7 +111,10 @@
         <mat-card-content>
           <div class="row">
             <div class="col-sm-4 col-md-10 col-lg-10 mt-2">
-              <span>{{producer.name_prod}} - {{producer.type_of_Producter}} - {{producer.prod_energy}} kW</span>
+              <span>{{producer.name_prod}} - Zona: {{producer.zone}} - {{producer.type_of_Producter}} - Potenza:
+                {{producer.prod_energy}} kW
+                <span *ngIf="producer.capacity != ''"> - Capacità KW: {{producer.capacity}}</span>
+              </span>
             </div>
             <div class="col d-flex justify-content-end">
               <mat-icon (click)="getProducer(producer);prevGo()"> border_color</mat-icon>
