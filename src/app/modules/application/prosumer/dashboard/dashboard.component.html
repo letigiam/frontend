@@ -10,7 +10,7 @@
           <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Nome Prosumer
+                Dati generali
               </mat-panel-title>
               <mat-panel-description>
 
@@ -25,17 +25,17 @@
                 <input matInput class="example-full-width" formControlName="name">
               </mat-form-field>
 
+              <mat-form-field class="example-full-width me-3" appearance="fill">
+                <mat-label class="fontSize">Zona di appertenenza</mat-label>
+                <mat-select formControlName="zone" required>
+                  <mat-option *ngFor="let type of zone" [value]="type">{{type}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
               <mat-form-field appearance="fill" class="example-full-width me-3">
                 <mat-label class="fontSize">Tipo di Prosumer</mat-label>
                 <mat-select formControlName="type_of_ProsumerList">
                   <mat-option *ngFor="let type of type_of_ProsumerList" [value]="type">{{type}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-
-              <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label class="fontSize">Tipologia di Produttore </mat-label>
-                <mat-select formControlName="type_of_Producter">
-                  <mat-option *ngFor="let type of type_of_Producter" selected [value]="type">{{type}}</mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
@@ -65,7 +65,15 @@
               </mat-form-field>
               <!-- <br> -->
 
+
               <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label class="fontSize">Tipologia di Produttore </mat-label>
+                <mat-select formControlName="type_of_Producter">
+                  <mat-option *ngFor="let type of type_of_Producter" selected [value]="type">{{type}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <!-- <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label class="fontSize">Numero di pannelli</mat-label>
                 <input matInput type="number" formControlName="number_of_panels" required>
               </mat-form-field>
@@ -73,7 +81,7 @@
               <mat-form-field class="example-full-width  ms-4" appearance="fill">
                 <mat-label class="fontSize">Superficie disponibile in Mq</mat-label>
                 <input matInput type="number" formControlName="available_surface" required>
-              </mat-form-field>
+              </mat-form-field> -->
             </div>
 
             <mat-action-row>
@@ -85,7 +93,7 @@
           <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                Consumi
+                Parametri di consumi
               </mat-panel-title>
               <mat-panel-description>
 
@@ -95,17 +103,21 @@
             </mat-expansion-panel-header>
 
             <div class="space">
-              <mat-form-field appearance="fill">
+              <mat-form-field class="example-full-width ms-3 me-3" appearance="fill">
                 <mat-label class="fontSize">Profilo di consumo</mat-label>
                 <mat-select formControlName="type_of_consumeList" required>
                   <mat-option *ngFor="let type of type_of_consumeList" [value]="type">{{type}}</mat-option>
                 </mat-select>
               </mat-form-field>
-              <mat-form-field appearance="fill" class="example-full-width ms-4">
+              <mat-form-field appearance="fill" class="example-full-width me-3">
                 <mat-label class="fontSize">Classe Energetica</mat-label>
                 <mat-select formControlName="energy_ratingList" required>
                   <mat-option *ngFor="let type of energy_ratingList" [value]="type">{{type}}</mat-option>
                 </mat-select>
+              </mat-form-field>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label class="fontSize">Prezzo orario annuale</mat-label>
+                <input matInput type="number" formControlName="prezzo_z_orario" required>
               </mat-form-field>
             </div>
 
@@ -134,11 +146,12 @@
         <mat-card-content>
           <div class="row">
             <div class="col-sm-4 col-md-10 col-lg-10 mt-2">
-              <!--  -->
+              <!-- 
+                Numero di pannelli: {{prosumer.number_of_panels}} - Sup. Disponibile: {{prosumer.available_surface}} (in
+                mq)  -->
               <span>{{prosumer.name}} - {{prosumer.type_of_Producter}} - {{prosumer.type_of_ProsumerList}} -
                 {{prosumer.type_of_consumeList}} - {{prosumer.energy_ratingList}} - {{prosumer.type_of_energy}} kW -
-                Numero di pannelli: {{prosumer.number_of_panels}} - Sup. Disponibile: {{prosumer.available_surface}} (in
-                mq)
+                Zona: {{prosumer.zone}} - Prezzo per orario: € {{prosumer.prezzo_z_orario}}
               </span>
             </div>
             <div class="col d-flex justify-content-end mt-2">

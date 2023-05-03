@@ -27,7 +27,7 @@ import { DashboardProducterComponent } from '../modules/application/producter/da
 import { ParametersComponent } from '../modules/application/prosumer/parameters/parameters.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ContainerComponent } from '../modules/application/container/container.component';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
     declarations: [
@@ -51,6 +51,7 @@ import { ContainerComponent } from '../modules/application/container/container.c
         // MatButtonModule,
         FormsModule,
         // MatSidenavModule,
+        MatTooltipModule,
         ReactiveFormsModule,
         MatExpansionModule,
         MatTableModule,

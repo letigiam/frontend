@@ -19,9 +19,10 @@ export class DashboardComponent implements OnInit {
   type_of_consume = new FormControl('');
   energy_rating = new FormControl('');
   type_of_ProsumerList: string[] = ['Residenziale', 'Utenza condominiale residenziale', 'Ufficio', 'Scuola', 'Ristorante', 'Negozio'];
-  type_of_consumeList: string[] = ['Consumo totale annuo in kWh', 'Consumo mensile orario', 'Consumo mensile per fasce'];
+  type_of_consumeList: string[] = ['Consumo totale annuo in kWh', 'Consumo mensile per fasce'];
   energy_ratingList: string[] = ['Classe 1', 'Classe 2', 'Classe 3', 'Classe 4', 'Classe 5', 'Classe 6', 'Classe 7', 'Classe 8'];
   type_of_Producter: string[] = ['Fotovoltaico'];
+  zone: string[] = ['Nord', 'Centro', 'Sud'];
   chooseVisually: string[] = ['Anno', 'mese'];
   choose: string | any;
   date = moment().format('YYYY-MM-DD');
@@ -40,9 +41,12 @@ export class DashboardComponent implements OnInit {
       type_of_ProsumerList: 'Residenziale',
       type_of_Producter: 'Fotovoltaico',
       type_of_energy: ['', Validators.required],
+      zone: ['', Validators.required],
+      prezzo_z_orario: ['', Validators.required],
+      // trase_bt: ['', Validators.required],
       // date_prosumer: moment().format('YYYY-MM-DD'),
-      number_of_panels: ['', Validators.required],
-      available_surface: ['', Validators.required],
+      // number_of_panels: ['', Validators.required],
+      // available_surface: ['', Validators.required],
       type_of_consumeList: ['', Validators.required],
       energy_ratingList: ['', Validators.required],
     });
@@ -53,9 +57,11 @@ export class DashboardComponent implements OnInit {
       type_of_ProsumerList: 'Residenziale',
       type_of_Producter: 'Fotovoltaico',
       type_of_energy: 25,
+      zone: 'Sud',
+      prezzo_z_orario: 100,
       // date_prosumer: '2017/02/05',
-      number_of_panels: 2,
-      available_surface: 80,
+      // number_of_panels: 2,
+      // available_surface: 80,
       type_of_consumeList: 'Consumo totale annuo in kWh',
       energy_ratingList: 'Classe 2',
     }];
@@ -105,9 +111,12 @@ export class DashboardComponent implements OnInit {
       type_of_ProsumerList: element.type_of_ProsumerList,
       type_of_Producter: element.type_of_Producter,
       type_of_energy: element.type_of_energy,
+      zone: element.zone,
+      prezzo_z_orario: element.prezzo_z_orario,
+      // trase_bt: element.trase_bt,
       // date_prosumer: moment(element.date_prosumer).format('YYYY-MM-DD'),
-      number_of_panels: element.number_of_panels,
-      available_surface: element.available_surface,
+      // number_of_panels: element.number_of_panels,
+      // available_surface: element.available_surface,
       type_of_consumeList: element.type_of_consumeList,
       energy_ratingList: element.energy_ratingList,
     });
@@ -133,8 +142,11 @@ export class DashboardComponent implements OnInit {
           obj.type_of_ProsumerList = this.type_of_Prosumer.value.type_of_ProsumerList,
           obj.type_of_Producter = this.type_of_Prosumer.value.type_of_Producter,
           obj.type_of_energy = this.type_of_Prosumer.value.type_of_energy,
-          obj.number_of_panels = this.type_of_Prosumer.value.number_of_panels,
-          obj.available_surface = this.type_of_Prosumer.value.available_surface,
+          obj.zone = this.type_of_Prosumer.value.zone,
+          obj.prezzo_z_orario = this.type_of_Prosumer.value.prezzo_z_orario,
+          // obj.trase_bt = this.type_of_Prosumer.value.trase_bt,
+          // obj.number_of_panels = this.type_of_Prosumer.value.number_of_panels,
+          // obj.available_surface = this.type_of_Prosumer.value.available_surface,
           obj.type_of_consumeList = this.type_of_Prosumer.value.type_of_consumeList,
           obj.energy_ratingList = this.type_of_Prosumer.value.energy_ratingList;
       }
