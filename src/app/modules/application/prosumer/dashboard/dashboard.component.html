@@ -109,12 +109,19 @@
                   <mat-option *ngFor="let type of type_of_consumeList" [value]="type">{{type}}</mat-option>
                 </mat-select>
               </mat-form-field>
-              <mat-form-field appearance="fill" class="example-full-width me-3">
+
+              <mat-form-field appearance="fill" class="example-full-width me-1">
                 <mat-label class="fontSize">Classe Energetica</mat-label>
                 <mat-select formControlName="energy_ratingList" required>
                   <mat-option *ngFor="let type of energy_ratingList" [value]="type">{{type}}</mat-option>
                 </mat-select>
               </mat-form-field>
+              <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <img src="../../../../../assets/img/info.png" width="15" alt="" class="mrg me-3">
+              </a>
+
+
+
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label class="fontSize">Prezzo orario annuale</mat-label>
                 <input matInput type="number" formControlName="prezzo_z_orario" required>
@@ -195,5 +202,137 @@
   <div class="m-auto col-sm-4 col-md-10 col-lg-10 mt-2" *ngIf="prosumerArray.length > 0">
     <!-- <hr> -->
     <app-parameters [prosumerArray]="prosumerArray"></app-parameters>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 mt-3" id="exampleModalLabel">Classe Energetica</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Classe</th>
+              <th scope="col">Persone</th>
+              <th scope="col">Televisori</th>
+              <th scope="col">Computer</th>
+              <th scope="col">Frigoriferi</th>
+              <th scope="col">Lavatrice</th>
+              <th scope="col">Lavastoviglie</th>
+              <th scope="col">Condizionatori</th>
+              <th scope="col">Scaldabagno</th>
+              <th scope="col">Consumo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1.4 MWh/anno</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+              <td>2 MWh/anno</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>2</td>
+              <td>1</td>
+              <td>2.7 MWh/anno</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>3</td>
+              <td>1</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>0</td>
+              <td>2.5 MWh/anno</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>3</td>
+              <td>1</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>2</td>
+              <td>1</td>
+              <td>2.9 MWh/anno</td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>4</td>
+              <td>1</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>2</td>
+              <td>0</td>
+              <td>3.3 MWh/anno</td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>4</td>
+              <td>2</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>2</td>
+              <td>1</td>
+              <td>3.6 MWh/anno</td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>5</td>
+              <td>2</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>3</td>
+              <td>1</td>
+              <td>5.2 MWh/anno</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="d-flex justify-content-end me-4 mb-4">
+        <button type="button" class="btn button-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
