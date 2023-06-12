@@ -1,30 +1,33 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BaseComponent } from 'src/app/modules/application/components/base/base.component';
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
   styleUrls: ['./filters.component.scss']
 })
-export class FiltersComponent {
-  @Input() route = 'dashboard';
+export class FiltersComponent extends BaseComponent {
+  type: 'cer' | 'user' = 'cer';
+  selected_entity: any = { id: null, name: null };
+  url: any;
 
-  constructor(private router: Router,) { }
+  constructor(private router: Router, private route: ActivatedRoute) {
+    super();
+
+    this.route.url.subscribe(value => {
+      this.refreshData();
+    });
+  }
 
   resertToken() {
     localStorage.removeItem('Authorization');
     this.router.navigate(['/auth/login']);
   }
 
-  locations: any = [
-    { id: 1, name: 'Alessandria' },
-    { id: 2, name: 'Asti' },
-    { id: 3, name: 'Matera' },
-    { id: 4, name: 'Valdarno' }
-  ];
-
-  users: any = [
-    { id: 1, name: 'Mario Rossi' },
-    { id: 2, name: 'Filippo Verdi' },
-    { id: 3, name: 'Andrea Bianchi' }
-  ]
+  refreshData() {
+    this.url = this.route.snapshot.url.map(fragment => fragment.path)[0];
+    this.type = this.route.snapshot.url.map(fragment => fragment.path).includes('cer') ? 'cer' : 'user';
+    if (this.type == 'cer') this.selected_entity = this.locations.find((location: any) => location.id == this.route.snapshot.params['cer']);
+    else this.selected_entity = this.users.find((user: any) => user.id == this.route.snapshot.params['utente']);
+  }
 }

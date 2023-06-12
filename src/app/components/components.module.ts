@@ -1,5 +1,5 @@
 
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { LoginComponent } from '../modules/auth/components/login/login.component';
 import { RegistratiComponent } from './../modules/auth/components/registrati/registrati.component';
 import { RecuperoPswComponent } from './../modules/auth/components/recupero-psw/recupero-psw.component';
@@ -30,6 +30,7 @@ import { ContainerComponent } from '../modules/application/container/container.c
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { FiltersComponent } from './filters/filters.component';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 @NgModule({
     declarations: [
@@ -65,7 +66,8 @@ import { FiltersComponent } from './filters/filters.component';
         MatDatepickerModule,
         MatCardModule,
         MatTabsModule,
-        RouterModule
+        RouterModule,
+        CurrencyMaskModule
 
     ],
     exports: [
@@ -91,9 +93,11 @@ import { FiltersComponent } from './filters/filters.component';
         MatTabsModule,
         DashboardProducterComponent,
         ParametersComponent,
-        FiltersComponent
+        FiltersComponent,
+        CurrencyMaskModule
     ],
     providers: [],
-    bootstrap: []
+    bootstrap: [],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ComponentsModule { }

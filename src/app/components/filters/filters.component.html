@@ -8,25 +8,32 @@
           </a>
           <ul class="dropdown-menu">
             <li *ngFor="let location of locations">
-              <a class="dropdown-item" [routerLink]="'/' + route + '/cer/' + location.id">{{ location.name }}</a>
+              <a class="dropdown-item" [routerLink]="location.id ? '/' + url + '/cer/' + location.id : '/' + url"
+                [ngClass]="{'active': location.id == selected_entity.id}"
+                [class.disabled]="!location.id  && url == 'parametri'">{{ location.name }}</a>
             </li>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" routerLink="" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Utenti
           </a>
           <ul class="dropdown-menu">
             <li *ngFor="let user of users">
-              <a class="dropdown-item" [routerLink]="'/' + route + '/utenti/' + user.id">{{ user.name }}</a>
+              <a class="dropdown-item" [routerLink]="user.id ? '/' + url + '/utenti/' + user.id : '/' + url"
+                [ngClass]="{'active': user.id == selected_entity.id}"
+                [class.disabled]="!user.id  && url == 'parametri'">{{
+                user.name }}</a>
             </li>
           </ul>
         </li>
       </ul>
     </div>
 
-    <span class="badge text-bg-light py-2">Giugno 2023</span>
+    <div> Dati relativi
+      <span *ngIf="type == 'cer'">alla CER {{ selected_entity.name }}</span>
+      <span *ngIf="type == 'user'">all'utente {{ selected_entity.name }}</span>
+    </div>
   </div>
 </nav>

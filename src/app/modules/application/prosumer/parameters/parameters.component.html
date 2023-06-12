@@ -4,7 +4,99 @@
 
   <div class="container-fluid">
     <section>
-      <h1>Parametri</h1>
+      <h1>Parametri relativi {{ type == "cer" ? "alla CER" : "all'utente" }} {{ selected_entity?.name }}</h1>
+
+      <form [formGroup]="form" class="row flex-wrap" *ngIf="type == 'cer'">
+        <div class="col-12 col-lg-4">
+          <label for="basic-url" class="form-label">Incentivo Immissione (F1)</label>
+          <div class="input-group mb-3">
+            <input type="text" currencyMask [options]="currencyOptions" class="form-control"
+              formControlName="incentivo_immissione_f1">
+            <label class="input-group-text" for="inputGroupSelect01">€ / Kwh</label>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <label for="basic-url" class="form-label">Incentivo Immissione (F2)</label>
+          <div class="input-group mb-3">
+            <input type="text" currencyMask [options]="currencyOptions" class="form-control"
+              formControlName="incentivo_immissione_f2">
+            <label class="input-group-text" for="inputGroupSelect01">€ / Kwh</label>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <label for="basic-url" class="form-label">Incentivo Immissione (F3)</label>
+          <div class="input-group mb-3">
+            <input type="text" currencyMask [options]="currencyOptions" class="form-control"
+              formControlName="incentivo_immissione_f3">
+            <label class="input-group-text" for="inputGroupSelect01">€ / Kwh</label>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <label for="basic-url" class="form-label">Costo pannelli</label>
+          <div class="input-group mb-3">
+            <input type="text" currencyMask [options]="currencyOptions" class="form-control"
+              formControlName="costo_pannelli">
+            <label class="input-group-text" for="inputGroupSelect01">€ / Kwh</label>
+          </div>
+        </div>
+      </form>
+
+      <form [formGroup]="form" class="row flex-wrap" *ngIf="type == 'user'">
+        <div class="col-12 col-lg-4">
+          <label for="basic-url" class="form-label">Incentivo Autoconsumo Virtuale</label>
+          <div class="input-group mb-3">
+            <input type="text" currencyMask [options]="currencyOptions" class="form-control"
+              formControlName="incentivo_autoconsumo_virtuale">
+            <label class="input-group-text" for="inputGroupSelect01">€ / Kwh</label>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <label for="basic-url" class="form-label">Incentivo Autoconsumo Virtuale Produttori</label>
+          <div class="input-group mb-3">
+            <input type="text" currencyMask [options]="currencyOptions" class="form-control"
+              formControlName="incentivo_autoconsumo_virtuale_produttori">
+            <label class="input-group-text" for="inputGroupSelect01">%</label>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <label for="basic-url" class="form-label">Degrado Pannelli</label>
+          <div class="input-group mb-3">
+            <input type="text" currencyMask [options]="currencyOptions" class="form-control"
+              formControlName="degrado_pannelli">
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <label for="basic-url" class="form-label">Manutenzione e Tasse</label>
+          <div class="input-group mb-3">
+            <input type="text" currencyMask [options]="currencyOptions" class="form-control"
+              formControlName="manutenzione_tasse">
+            <label class="input-group-text" for="inputGroupSelect01">%</label>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <label for="basic-url" class="form-label">CO2 per kWh</label>
+          <div class="input-group mb-3">
+            <input type="text" currencyMask [options]="currencyOptions" class="form-control" formControlName="co2_kwh">
+            <label class="input-group-text" for="inputGroupSelect01">kg/kWh</label>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <label for="basic-url" class="form-label">CO2 per Albero</label>
+          <div class="input-group mb-3">
+            <input type="text" currencyMask [options]="currencyOptions" class="form-control"
+              formControlName="co2_albero">
+            <label class="input-group-text" for="inputGroupSelect01">kg/anno</label>
+          </div>
+        </div>
+      </form>
     </section>
   </div>
 </div>

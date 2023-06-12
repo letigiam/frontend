@@ -14,7 +14,6 @@ const routes: Routes = [
             { path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent },
             { path: 'dashboard/cer/:cer', canActivate: [AuthGuard], component: DashboardComponent },
             { path: 'dashboard/utenti/:utente', canActivate: [AuthGuard], component: DashboardComponent },
-            { path: 'parametri', canActivate: [AuthGuard], component: ParametersComponent },
             { path: 'parametri/cer/:cer', canActivate: [AuthGuard], component: ParametersComponent },
             { path: 'parametri/utenti/:utente', canActivate: [AuthGuard], component: ParametersComponent }
         ]
