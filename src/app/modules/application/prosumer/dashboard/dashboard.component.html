@@ -87,6 +87,68 @@
       <div class="row mx-3 my-4">
         <app-chartBars [data]="selected_entity?.data.charts"></app-chartBars>
       </div>
+
+      <div class="row mx-3 my-4">
+        <div class="col-md-6">
+          <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Valori medi annuali</h3>
+              <div class="box-tools pull-right">
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="table-responsive">
+                <table class="table no-margin">
+                  <thead>
+                    <tr>
+                      <th>Descrizione</th>
+                      <th>Valore</th>
+                      <th>Ricavi/Spese</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let field of selected_entity?.data.energetici">
+                      <td>{{ field.label }}</td>
+                      <td>{{ field.value }} {{ field.unit }}</td>
+                      <td>{{ field.value }} {{ field.unit }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Proiezioni a 20 anni</h3>
+              <div class="box-tools pull-right">
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="table-responsive">
+                <table class="table no-margin">
+                  <thead>
+                    <tr>
+                      <th>Descrizione</th>
+                      <th>Valore</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let field of selected_entity?.data.energetici">
+                      <td>{{ field.label }}</td>
+                      <td>{{ field.value }} {{ field.unit }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </div>
