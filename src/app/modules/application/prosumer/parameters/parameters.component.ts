@@ -31,26 +31,27 @@ export class ParametersComponent extends BaseComponent implements OnInit {
     this.type = this.route.snapshot.url.map(fragment => fragment.path).includes('cer') ? 'cer' : 'user';
 
     if (this.type == 'cer') {
-      this.form = this.fb.group({
-        incentivo_immissione_f1: 0.21,
-        incentivo_immissione_f2: 0.21,
-        incentivo_immissione_f3: 0.21,
-        costo_pannelli: 1400
-      });
-
       this.selected_entity = this.locations.find((location: any) => location.id == this.route.snapshot.params['cer']);
 
-    } else {
       this.form = this.fb.group({
-        incentivo_autoconsumo_virtuale: 0.12,
-        incentivo_autoconsumo_virtuale_produttori: 70,
-        degrado_pannelli: 0.9,
-        manutenzione_tasse: 15,
-        co2_kwh: 0.53,
-        co2_albero: 167,
+        incentivo_immissione_f1: this.selected_entity.data.parameters.incentivo_immissione_f1,
+        incentivo_immissione_f2: this.selected_entity.data.parameters.incentivo_immissione_f2,
+        incentivo_immissione_f3: this.selected_entity.data.parameters.incentivo_immissione_f3,
+        costo_pannelli: this.selected_entity.data.parameters.costo_pannelli
       });
 
+
+    } else {
       this.selected_entity = this.users.find((user: any) => user.id == this.route.snapshot.params['utente']);
+
+      this.form = this.fb.group({
+        incentivo_autoconsumo_virtuale: this.selected_entity.data.parameters.incentivo_autoconsumo_virtuale,
+        incentivo_autoconsumo_virtuale_produttori: this.selected_entity.data.parameters.incentivo_autoconsumo_virtuale_produttori,
+        degrado_pannelli: this.selected_entity.data.parameters.degrado_pannelli,
+        manutenzione_tasse: this.selected_entity.data.parameters.manutenzione_tasse,
+        co2_kwh: this.selected_entity.data.parameters.co2_kwh,
+        co2_albero: this.selected_entity.data.parameters.co2_albero,
+      });
     }
   }
 }

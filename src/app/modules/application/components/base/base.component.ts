@@ -16,7 +16,7 @@ export class BaseComponent implements OnInit {
   };
 
   locations: any = [
-    { id: null, name: 'Tutti' },
+    // { id: null, name: 'Tutti' },
     {
       id: 1,
       name: 'Alessandria',
@@ -125,7 +125,13 @@ export class BaseComponent implements OnInit {
           {
             values: [7981.782942076948, 9793.174557132972, 13893.808491555767, 16136.894716135968, 18711.300865012417, 17623.057577372063, 18317.328242035743, 11006.632055532391, 16204.982631529636, 13747.70193847012, 11096.335334405723, 7573.583754783867]
           }
-        ]
+        ],
+        parameters: {
+          incentivo_immissione_f1: 0.21,
+          incentivo_immissione_f2: 0.21,
+          incentivo_immissione_f3: 0.21,
+          costo_pannelli: 1400
+        }
       },
       map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45211.60338882542!2d8.556058419943199!3d44.90858568301426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47877431ed416505%3A0xd647f5990f0c62d9!2sAlessandria%20AL!5e0!3m2!1sit!2sit!4v1686561010953!5m2!1sit!2sit'
     },
@@ -237,7 +243,13 @@ export class BaseComponent implements OnInit {
           {
             values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
           }
-        ]
+        ],
+        parameters: {
+          incentivo_immissione_f1: 0.23,
+          incentivo_immissione_f2: 0.24,
+          incentivo_immissione_f3: 0.25,
+          costo_pannelli: 1513
+        }
       },
       map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1458448.9531610203!2d8.68674181063658!3d44.40332029475741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787933cd27f8277%3A0xe7347bb67fb9d561!2s14100%20Asti%20AT!5e0!3m2!1sit!2sit!4v1686561203041!5m2!1sit!2sit'
     },
@@ -349,7 +361,13 @@ export class BaseComponent implements OnInit {
           {
             values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
           }
-        ]
+        ],
+        parameters: {
+          incentivo_immissione_f1: 0.20,
+          incentivo_immissione_f2: 0.22,
+          incentivo_immissione_f3: 0.24,
+          costo_pannelli: 1380
+        }
       },
       map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24211.387857632533!2d16.579529348712352!3d40.6646372227786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13477ee2482b152b%3A0x8f6a4ae10da9360!2s75100%20Matera%20MT!5e0!3m2!1sit!2sit!4v1686561044713!5m2!1sit!2sit'
     },
@@ -468,7 +486,7 @@ export class BaseComponent implements OnInit {
   ];
 
   users: any = [
-    { id: null, name: 'Tutti' },
+    // { id: null, name: 'Tutti' },
     {
       id: 1,
       name: 'Mario Rossi',
@@ -577,7 +595,15 @@ export class BaseComponent implements OnInit {
           {
             values: [7981.782942076948, 9793.174557132972, 13893.808491555767, 16136.894716135968, 18711.300865012417, 17623.057577372063, 18317.328242035743, 11006.632055532391, 16204.982631529636, 13747.70193847012, 11096.335334405723, 7573.583754783867]
           }
-        ]
+        ],
+        parameters: {
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
+          co2_albero: 167
+        }
       },
     },
     {
@@ -688,7 +714,15 @@ export class BaseComponent implements OnInit {
           {
             values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
           }
-        ]
+        ],
+        parameters: {
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
+          co2_albero: 167
+        }
       },
     },
     {
@@ -799,7 +833,15 @@ export class BaseComponent implements OnInit {
           {
             values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
           }
-        ]
+        ],
+        parameters: {
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
+          co2_albero: 167
+        }
       },
     }
   ];
