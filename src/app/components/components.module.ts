@@ -29,6 +29,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { ContainerComponent } from '../modules/application/container/container.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
     declarations: [
@@ -41,7 +42,8 @@ import { RouterModule } from '@angular/router';
         DashboardComponent,
         DashboardProducterComponent,
         ParametersComponent,
-        ContainerComponent
+        ContainerComponent,
+        FiltersComponent
     ],
     imports: [
         CommonModule,
@@ -89,6 +91,7 @@ import { RouterModule } from '@angular/router';
         MatTabsModule,
         DashboardProducterComponent,
         ParametersComponent,
+        FiltersComponent
     ],
     providers: [],
     bootstrap: []
