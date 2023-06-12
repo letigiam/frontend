@@ -31,6 +31,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { FiltersComponent } from './filters/filters.component';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { ChartBarsComponent } from '../modules/application/prosumer/dashboard/chart/chartBars/chartBars.component';
 
 @NgModule({
     declarations: [
@@ -44,7 +45,8 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
         DashboardProducterComponent,
         ParametersComponent,
         ContainerComponent,
-        FiltersComponent
+        FiltersComponent,
+        ChartBarsComponent
     ],
     imports: [
         CommonModule,
@@ -68,6 +70,7 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
         MatTabsModule,
         RouterModule,
         CurrencyMaskModule
+
 
     ],
     exports: [
@@ -94,7 +97,8 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
         DashboardProducterComponent,
         ParametersComponent,
         FiltersComponent,
-        CurrencyMaskModule
+        CurrencyMaskModule,
+        ChartBarsComponent
     ],
     providers: [],
     bootstrap: [],
