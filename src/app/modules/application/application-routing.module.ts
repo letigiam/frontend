@@ -4,29 +4,15 @@ import { ApplicationComponent } from './components/application/application.compo
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './prosumer/dashboard/dashboard.component';
-import { BaseComponent } from './components/base/base.component';
 import { AuthGuard } from '../auth/components/auth.guard';
-import { DashboardProducterComponent } from './producter/dashboard-producter/dashboard-producter.component';
+import { ParametersComponent } from './prosumer/parameters/parameters.component';
 
 const routes: Routes = [
     {
         path: '', component: ApplicationComponent, children: [
-            {
-                path: 'home', component: BaseComponent, canActivate: [AuthGuard], children: [
-                    { path: '', canActivate: [AuthGuard], component: ContainerComponent },
-
-                ]
-            },
-            {
-                path: 'prosumer/dashboard', canActivate: [AuthGuard], component: BaseComponent, children: [
-                    { path: '', canActivate: [AuthGuard], component: DashboardComponent },
-                ]
-            },
-            {
-                path: 'producter/dashboard', canActivate: [AuthGuard], component: BaseComponent, children: [
-                    { path: '', canActivate: [AuthGuard], component: DashboardProducterComponent },
-                ]
-            }
+            { path: 'home', component: ContainerComponent, canActivate: [AuthGuard] },
+            { path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent },
+            { path: 'parametri', canActivate: [AuthGuard], component: ParametersComponent }
         ]
     }
 ];

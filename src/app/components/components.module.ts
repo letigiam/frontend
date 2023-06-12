@@ -28,6 +28,7 @@ import { ParametersComponent } from '../modules/application/prosumer/parameters/
 import { NgChartsModule } from 'ng2-charts';
 import { ContainerComponent } from '../modules/application/container/container.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -62,6 +63,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         MatDatepickerModule,
         MatCardModule,
         MatTabsModule,
+        RouterModule
 
     ],
     exports: [
