@@ -86,6 +86,56 @@ export class BaseComponent implements OnInit {
             unit: 'kwH',
           }
         ],
+        valori_annuali: [
+          {
+            label: 'Immesso in rete',
+            value: 37051.57,
+            unit: 'kWh',
+            ricavi_spese: 7780
+          },
+          {
+            label: 'Autoconsumo diretto',
+            value: 3610.70,
+            unit: 'kWh',
+            ricavi_spese: 1444
+          },
+          {
+            label: 'Autoconsumo diffuso',
+            value: 17088.85,
+            unit: 'kWh',
+            ricavi_spese: 2033
+          },
+          {
+            label: 'Consumo annuale',
+            value: 36920.38,
+            unit: 'kWh',
+            ricavi_spese: 14788
+          }
+        ],
+        proiezione: [
+          {
+            label: 'Manutenzione e SW',
+            unit: '€',
+            value: 4200,
+          },
+          {
+            label: 'Ricavo in 20 anni',
+            unit: '€',
+            value: 120000,
+
+          },
+          {
+            label: 'Guadagno in 20 anni',
+            unit: '€',
+            value: 110000,
+          },
+          {
+            label: 'Recupero in anni',
+            unit: 'anni',
+            value: 3.97,
+
+          }
+        ],
         tails: [
           {
             icon: 'fa-area-chart',
@@ -202,6 +252,56 @@ export class BaseComponent implements OnInit {
             label: 'Producibilità',
             value: 23654,
             unit: 'kwH',
+          }
+        ],
+        valori_annuali: [
+          {
+            label: 'Immesso in rete',
+            value: 37051.57,
+            unit: 'kWh',
+            ricavi_spese: 7780
+          },
+          {
+            label: 'Autoconsumo diretto',
+            value: 3610.70,
+            unit: 'kWh',
+            ricavi_spese: 1444
+          },
+          {
+            label: 'Autoconsumo diffuso',
+            value: 17088.85,
+            unit: 'kWh',
+            ricavi_spese: 2033
+          },
+          {
+            label: 'Consumo annuale',
+            value: 36920.38,
+            unit: 'kWh',
+            ricavi_spese: 14788
+          }
+        ],
+        proiezione: [
+          {
+            label: 'Manutenzione e SW',
+            unit: '€',
+            value: 4200,
+          },
+          {
+            label: 'Ricavo in 20 anni',
+            unit: '€',
+            value: 120000,
+
+          },
+          {
+            label: 'Guadagno in 20 anni',
+            unit: '€',
+            value: 110000,
+          },
+          {
+            label: 'Recupero in anni',
+            unit: 'anni',
+            value: 3.97,
+
           }
         ],
         tails: [
@@ -322,6 +422,56 @@ export class BaseComponent implements OnInit {
             unit: 'kwH',
           }
         ],
+        valori_annuali: [
+          {
+            label: 'Immesso in rete',
+            value: 37051.57,
+            unit: 'kWh',
+            ricavi_spese: 7780
+          },
+          {
+            label: 'Autoconsumo diretto',
+            value: 3610.70,
+            unit: 'kWh',
+            ricavi_spese: 1444
+          },
+          {
+            label: 'Autoconsumo diffuso',
+            value: 17088.85,
+            unit: 'kWh',
+            ricavi_spese: 2033
+          },
+          {
+            label: 'Consumo annuale',
+            value: 36920.38,
+            unit: 'kWh',
+            ricavi_spese: 14788
+          }
+        ],
+        proiezione: [
+          {
+            label: 'Manutenzione e SW',
+            unit: '€',
+            value: 4200,
+          },
+          {
+            label: 'Ricavo in 20 anni',
+            unit: '€',
+            value: 120000,
+
+          },
+          {
+            label: 'Guadagno in 20 anni',
+            unit: '€',
+            value: 110000,
+          },
+          {
+            label: 'Recupero in anni',
+            unit: 'anni',
+            value: 3.97,
+
+          }
+        ],
         tails: [
           {
             icon: 'fa-area-chart',
@@ -438,6 +588,56 @@ export class BaseComponent implements OnInit {
             label: 'Producibilità',
             value: 24000,
             unit: 'kwH',
+          }
+        ],
+        valori_annuali: [
+          {
+            label: 'Immesso in rete',
+            value: 37051.57,
+            unit: 'kWh',
+            ricavi_spese: 7780
+          },
+          {
+            label: 'Autoconsumo diretto',
+            value: 3610.70,
+            unit: 'kWh',
+            ricavi_spese: 1444
+          },
+          {
+            label: 'Autoconsumo diffuso',
+            value: 17088.85,
+            unit: 'kWh',
+            ricavi_spese: 2033
+          },
+          {
+            label: 'Consumo annuale',
+            value: 36920.38,
+            unit: 'kWh',
+            ricavi_spese: 14788
+          }
+        ],
+        proiezione: [
+          {
+            label: 'Manutenzione e SW',
+            unit: '€',
+            value: 4200,
+          },
+          {
+            label: 'Ricavo in 20 anni',
+            unit: '€',
+            value: 120000,
+
+          },
+          {
+            label: 'Guadagno in 20 anni',
+            unit: '€',
+            value: 110000,
+          },
+          {
+            label: 'Recupero in anni',
+            unit: 'anni',
+            value: 3.97,
+
           }
         ],
         tails: [
@@ -673,26 +873,6 @@ export class BaseComponent implements OnInit {
             label: 'Producibilità',
             value: 23654,
             unit: 'kwH',
-          }
-        ],
-        proiezione: [
-          {
-            label: 'Manutenzione e SW',
-            value: 4200,
-          },
-          {
-            label: 'Ricavo in 20 anni',
-            value: 120000,
-
-          },
-          {
-            label: 'Guadagno in 20 anni',
-            value: 110000,
-          },
-          {
-            label: 'Recupero in anni',
-            value: 158892,
-
           }
         ],
         tails: [

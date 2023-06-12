@@ -89,7 +89,7 @@
       </div>
 
       <div class="row mx-3 my-4">
-        <div class="col-md-6">
+        <div class="col-md-6" *ngIf="selected_entity?.data.valori_annuali">
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
             <div class="box-header with-border">
@@ -108,10 +108,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let field of selected_entity?.data.energetici">
+                    <tr *ngFor="let field of selected_entity?.data.valori_annuali">
                       <td>{{ field.label }}</td>
                       <td>{{ field.value }} {{ field.unit }}</td>
-                      <td>{{ field.value }} {{ field.unit }}</td>
+                      <td>{{ field.ricavi_spese }} € </td>
                     </tr>
                   </tbody>
                 </table>
@@ -120,7 +120,7 @@
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6" *ngIf="selected_entity?.data.proiezione">
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
             <div class="box-header with-border">
@@ -138,9 +138,9 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let field of selected_entity?.data.energetici">
+                    <tr *ngFor="let field of selected_entity?.data.proiezione">
                       <td>{{ field.label }}</td>
-                      <td>{{ field.value }}</td>
+                      <td>{{ field.value }} {{ field.unit }}</td>
                     </tr>
                   </tbody>
                 </table>
