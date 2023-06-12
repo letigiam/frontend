@@ -72,7 +72,9 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   }
 
   override ngOnInit() {
-    this.refreshData();
+    this.route.url.subscribe(value => {
+      this.refreshData();
+    });
   }
 
   refreshData() {
