@@ -5,27 +5,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './headers.component.html',
   styleUrls: ['./headers.component.scss']
 })
-export class HeadersComponent implements OnInit {
+export class HeadersComponent {
 
-  constructor(private router: Router,) { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
-
-  }
-
-  home() {
-    this.router.navigate(['/home']);
-  }
-  prosumer() {
-    this.router.navigate(['/prosumer/dashboard']);
-  }
-
-  producter() {
-    this.router.navigate(['/producter/dashboard']);
-  }
-
-  resertToken() {
+  resetToken() {
     localStorage.removeItem('Authorization');
-    this.router.navigate(['/auth/login']);
+    this.router.navigate(['/login']);
   }
 }

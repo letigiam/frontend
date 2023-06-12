@@ -12,7 +12,11 @@ const routes: Routes = [
         path: '', component: ApplicationComponent, children: [
             { path: 'home', component: ContainerComponent, canActivate: [AuthGuard] },
             { path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent },
-            { path: 'parametri', canActivate: [AuthGuard], component: ParametersComponent }
+            { path: 'dashboard/cer/:cer', canActivate: [AuthGuard], component: DashboardComponent },
+            { path: 'dashboard/utenti/:utente', canActivate: [AuthGuard], component: DashboardComponent },
+            { path: 'parametri', canActivate: [AuthGuard], component: ParametersComponent },
+            { path: 'parametri/cer/:cer', canActivate: [AuthGuard], component: ParametersComponent },
+            { path: 'parametri/utenti/:utente', canActivate: [AuthGuard], component: ParametersComponent }
         ]
     }
 ];

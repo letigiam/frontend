@@ -40,6 +40,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/app/home']);
   }
 }
