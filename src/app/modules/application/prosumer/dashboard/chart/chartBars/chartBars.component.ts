@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Chart, ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 
@@ -8,7 +9,7 @@ import { BaseChartDirective } from 'ng2-charts';
   styleUrls: ['./chartBars.component.css']
 })
 export class ChartBarsComponent implements OnInit {
-
+  @Input() data: any[] = [];
 
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
 
@@ -60,13 +61,13 @@ export class ChartBarsComponent implements OnInit {
       "Dic"],
     datasets: [
       {
-        data: [65, 59, 80, 81, 56, 55, 40, 28, 48, 40, 19, 36, 27, 60,],
+        data: this.data[0]?.values,
         label: 'Energia prodotta',
         backgroundColor: 'rgba(148,159,177,0.2)',
         borderColor: 'rgba(148,159,177,1)',
       },
       {
-        data: [28, 48, 40, 19, 86, 27, 90, 80, 48, 50, 45, 10, 50, 40],
+        data: this.data[1]?.values,
         label: 'Energia consumata',
         backgroundColor: 'rgba(77,83,96,0.2)',
         borderColor: 'rgba(77,83,96,1)',
@@ -83,11 +84,16 @@ export class ChartBarsComponent implements OnInit {
     // console.log(event, active);
   }
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
     // Chart.register(Annotation)
   }
 
   ngOnInit() {
+    this.route.url.subscribe(value => {
+      this.barChartData_.datasets[0].data = this.data[0]?.values;
+      this.barChartData_.datasets[1].data = this.data[1]?.values;
+      this.chart?.update();
+    });
   }
 
 }
