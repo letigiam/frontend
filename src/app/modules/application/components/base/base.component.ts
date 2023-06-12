@@ -477,64 +477,64 @@ export class BaseComponent implements OnInit {
         economici: [
           {
             label: 'Investimento totale',
-            value: 65000,
+            value: 15000,
             unit: '€',
           },
           {
             label: 'Risparmio autoconsumo annuo',
-            value: 5979,
+            value: 1500,
             unit: '€',
           },
           {
             label: 'Tariffa incentivante',
-            value: 1484,
+            value: 560,
             unit: '€',
           },
           {
             label: 'Vendita energia',
-            value: 1452,
+            value: 400,
             unit: '€',
           },
           {
             label: 'Totale ricavo annuo',
-            value: 8916,
+            value: 3500,
             unit: '€',
           },
           {
             label: 'Tempo di ritorno dell\'investimento',
-            value: 7.7,
+            value: 9.3,
             unit: 'anni',
           }
         ],
         energetici: [
           {
             label: 'Emissioni CO2 evitate',
-            value: 14.04,
-            unit: 'tonnellate',
+            value: 100,
+            unit: 'Kg',
           },
           {
             label: 'Energia prodotta',
-            value: 52726.9,
+            value: 1245.2,
             unit: 'kWh',
           },
           {
             label: 'Autoconsumo fisico',
-            value: 60,
+            value: 2,
             unit: '%',
           },
           {
             label: 'Autoconsumo diretto',
-            value: 160892,
+            value: 2150,
             unit: 'kWh',
           },
           {
             label: 'Consumo fotovoltaico annuo',
-            value: 3,
+            value: 0.1,
             unit: '%',
           },
           {
             label: 'Producibilità',
-            value: 24000,
+            value: 540,
             unit: 'kwH',
           }
         ],
@@ -542,31 +542,31 @@ export class BaseComponent implements OnInit {
           {
             icon: 'fa-area-chart',
             label: 'CO2 risparmiata',
-            value: 14.04,
+            value: 0.12,
             unit: 'tonnellate',
           },
           {
             icon: 'fa-battery',
             label: 'Autoconsumo fisico',
-            value: 60,
+            value: 0.4,
             unit: '%',
           },
           {
             icon: 'fa-certificate',
             label: 'Autoconsumo diretto',
-            value: 160892,
+            value: 1060,
             unit: 'kWh',
           },
           {
             icon: 'fa-bolt',
             label: 'Cessione rete',
-            value: 79108,
+            value: 520,
             unit: 'kWh',
           },
           {
             icon: 'fa-sun',
             label: 'Energia prodotta',
-            value: 52726.9,
+            value: 362.1,
             unit: 'kWh',
           },
         ],
