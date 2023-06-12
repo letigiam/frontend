@@ -8,7 +8,8 @@
           </a>
           <ul class="dropdown-menu">
             <li *ngFor="let location of locations">
-              <a class="dropdown-item" [routerLink]="location.id ? '/' + url + '/cer/' + location.id : '/' + url"
+              <a class="dropdown-item"
+                [routerLink]="location.id ? '/app/' + url + '/cer/' + location.id : '/app/' + url"
                 [ngClass]="{'active': location.id == selected_entity.id}"
                 [class.disabled]="!location.id  && url == 'parametri'">{{ location.name }}</a>
             </li>
@@ -21,7 +22,7 @@
           </a>
           <ul class="dropdown-menu">
             <li *ngFor="let user of users">
-              <a class="dropdown-item" [routerLink]="user.id ? '/' + url + '/utenti/' + user.id : '/' + url"
+              <a class="dropdown-item" [routerLink]="user.id ? '/app/' + url + '/utenti/' + user.id : '/app/' + url"
                 [ngClass]="{'active': user.id == selected_entity.id}"
                 [class.disabled]="!user.id  && url == 'parametri'">{{
                 user.name }}</a>
@@ -29,11 +30,6 @@
           </ul>
         </li>
       </ul>
-    </div>
-
-    <div> Dati relativi
-      <span *ngIf="type == 'cer'">alla CER {{ selected_entity.name }}</span>
-      <span *ngIf="type == 'user'">all'utente {{ selected_entity.name }}</span>
     </div>
   </div>
 </nav>
