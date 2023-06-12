@@ -675,6 +675,26 @@ export class BaseComponent implements OnInit {
             unit: 'kwH',
           }
         ],
+        proiezione: [
+          {
+            label: 'Manutenzione e SW',
+            value: 4200,
+          },
+          {
+            label: 'Ricavo in 20 anni',
+            value: 120000,
+
+          },
+          {
+            label: 'Guadagno in 20 anni',
+            value: 110000,
+          },
+          {
+            label: 'Recupero in anni',
+            value: 158892,
+
+          }
+        ],
         tails: [
           {
             icon: 'fa-area-chart',
