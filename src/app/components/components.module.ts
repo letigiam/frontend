@@ -32,6 +32,7 @@ import { RouterModule } from '@angular/router';
 import { FiltersComponent } from './filters/filters.component';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { ChartBarsComponent } from '../modules/application/prosumer/dashboard/chart/chartBars/chartBars.component';
+import { SafePipe } from '../helpers/safe.pipe';
 
 @NgModule({
     declarations: [
@@ -46,7 +47,8 @@ import { ChartBarsComponent } from '../modules/application/prosumer/dashboard/ch
         ParametersComponent,
         ContainerComponent,
         FiltersComponent,
-        ChartBarsComponent
+        ChartBarsComponent,
+        SafePipe
     ],
     imports: [
         CommonModule,
@@ -70,8 +72,6 @@ import { ChartBarsComponent } from '../modules/application/prosumer/dashboard/ch
         MatTabsModule,
         RouterModule,
         CurrencyMaskModule
-
-
     ],
     exports: [
         LoginComponent,
@@ -98,7 +98,9 @@ import { ChartBarsComponent } from '../modules/application/prosumer/dashboard/ch
         ParametersComponent,
         FiltersComponent,
         CurrencyMaskModule,
-        ChartBarsComponent
+        ChartBarsComponent,
+        SafePipe,
+        CommonModule
     ],
     providers: [],
     bootstrap: [],

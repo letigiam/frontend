@@ -2,7 +2,7 @@
   <app-headers></app-headers>
   <app-filters [route]="'dashboard'"></app-filters>
 
-  <div class="container-fluid">
+  <div class="container-fluid px-5">
     <section>
       <h1>Dashboard</h1>
       <div class="row mx-3 my-4">
@@ -20,62 +20,13 @@
                   <thead>
                     <tr>
                       <th>Descrizione</th>
-                      <th>Valore (kWh)</th>
-                      <th>Stato</th>
-                      <th>inc</th>
+                      <th>Valore</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Risparmio + ricavi</td>
-                      <td>194,69</td>
-                      <td><span class="label label-success">In salita</span></td>
-                      <td><span class="text-success"><i class="fa fa-angle-up"></i> 5,16</span></td>
-                    </tr>
-                    <tr>
-                      <td>Spesa Consumo</td>
-                      <td>180,18</td>
-                      <td><span class="label label-danger">In calo</span></td>
-                      <td>
-                        <span class="text-danger"><i class="fa fa-angle-down"></i>
-                          5,94%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Convenienza</td>
-                      <td>14,33</td>
-                      <td><span class="label label-success">In salita</span></td>
-                      <td>
-                        <span class="text-success"><i class="fa fa-angle-up"></i>
-                          144,90%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Consumo</td>
-                      <td>438,11</td>
-                      <td><span class="label label-danger">In calo</span></td>
-                      <td>
-                        <span class="text-danger"><i class="fa fa-angle-down"></i>
-                          7,77%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Totale incremento</td>
-                      <td>30,01</td>
-                      <td><span class="label label-danger">In calo</span></td>
-                      <td>
-                        <span class="text-danger"><i class="fa fa-angle-down"></i>
-                          2,50%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Risparmio da autoconsumo</td>
-                      <td>12,88</td>
-                      <td><span class="label label-danger">In salita</span></td>
-                      <td>
-                        <span class="text-danger"><i class="fa fa-angle-down"></i>
-                          33,44%</span>
-                      </td>
+                    <tr *ngFor="let field of selected_entity?.data.economici">
+                      <td>{{ field.label }}</td>
+                      <td>{{ field.value }} {{ field.unit }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -99,62 +50,13 @@
                   <thead>
                     <tr>
                       <th>Descrizione</th>
-                      <th>Valore (kWh)</th>
-                      <th>Stato</th>
-                      <th>inc</th>
+                      <th>Valore</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Autoconsumo diretto</td>
-                      <td>33,20</td>
-                      <td><span class="label label-danger">In calo</span></td>
-                      <td><span class="text-danger"><i class="fa fa-angle-down"></i> 33,44</span></td>
-                    </tr>
-                    <tr>
-                      <td>Autoconsumo virtuale</td>
-                      <td>252,18</td>
-                      <td><span class="label label-danger">In calo</span></td>
-                      <td>
-                        <span class="text-danger"><i class="fa fa-angle-down"></i>
-                          2,50%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Immissione in rete</td>
-                      <td>722,84</td>
-                      <td><span class="label label-success">In salita</span></td>
-                      <td>
-                        <span class="text-success"><i class="fa fa-angle-up"></i>
-                          9,95%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Consumo</td>
-                      <td>438,11</td>
-                      <td><span class="label label-danger">In calo</span></td>
-                      <td>
-                        <span class="text-danger"><i class="fa fa-angle-down"></i>
-                          7,77%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Prelievo rete</td>
-                      <td>198,72</td>
-                      <td><span class="label label-danger">In calo</span></td>
-                      <td>
-                        <span class="text-danger"><i class="fa fa-angle-down"></i>
-                          10,31%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Energia generata</td>
-                      <td>755,04</td>
-                      <td><span class="label label-success">In salita</span></td>
-                      <td>
-                        <span class="text-success"><i class="fa fa-angle-up"></i>
-                          8,10%</span>
-                      </td>
+                    <tr *ngFor="let field of selected_entity?.data.energetici">
+                      <td>{{ field.label }}</td>
+                      <td>{{ field.value }} {{ field.unit }}</td>
                     </tr>
                   </tbody>
                 </table>

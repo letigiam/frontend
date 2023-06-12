@@ -1,5 +1,6 @@
 <div id="divChart" class="mt-5 mb-4" width="300px">
-  <canvas baseChart class="chart" [data]="barChartData_" [options]="barChartOptions_" [plugins]="barChartPlugins"
-    [type]="barChartType_" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+  <canvas baseChart class="chart" height="100" [data]="barChartData_" [options]="barChartOptions_"
+    [plugins]="barChartPlugins" [type]="barChartType_" (chartHover)="chartHovered($event)"
+    (chartClick)="chartClicked($event)">
   </canvas>
 </div>

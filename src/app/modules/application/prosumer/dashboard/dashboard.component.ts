@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { BaseComponent } from '../../components/base/base.component';
 
 
 @Component({
@@ -10,7 +11,10 @@ import Swal from 'sweetalert2';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent extends BaseComponent implements OnInit {
+  type: 'cer' | 'user' = 'cer';
+  selected_entity: any;
+
   modify = false;
   step = 0;
   id = 0;
@@ -28,13 +32,13 @@ export class DashboardComponent implements OnInit {
   date = moment().format('YYYY-MM-DD');
   prosumerArray = new Array();
 
-
-
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private fb: FormBuilder,
   ) {
+    super();
+
     this.type_of_Prosumer = this.fb.group({
       id: '',
       name: ['', Validators.required],
@@ -66,8 +70,19 @@ export class DashboardComponent implements OnInit {
       energy_ratingList: 'Classe 2',
     }];
   }
-  ngOnInit() {
 
+  override ngOnInit() {
+    this.refreshData();
+  }
+
+  refreshData() {
+    this.type = this.route.snapshot.url.map(fragment => fragment.path).includes('cer') ? 'cer' : 'user';
+
+    if (this.type == 'cer') {
+      this.selected_entity = this.locations.find((location: any) => location.id == this.route.snapshot.params['cer']);
+    } else {
+      this.selected_entity = this.users.find((user: any) => user.id == this.route.snapshot.params['utente']);
+    }
   }
 
   setStep(index: number) {
