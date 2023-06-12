@@ -17,8 +17,8 @@ export class ContainerComponent implements OnInit {
 
   ngOnInit() { }
 
-  prosumer() {
-    this.router.navigate(['/prosumer/dashboard']);
+  dashboard() {
+    this.router.navigate(['/dashboard']);
   }
 
   producter() {

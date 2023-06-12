@@ -1,57 +1,333 @@
-<div class="m-auto mt-5 col-10">
-    <div class="mt-5">
-        <div class="row mb-5 white" style="text-align: justify;">
-            <h3>Lorem ipsum</h3>
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum magna tortor, at malesuada
-                velit consectetur ut. In ullamcorper justo in tempus commodo. Etiam sem erat, ultrices at ullamcorper
-                sed, pharetra et neque. Aenean eu felis et orci auctor feugiat. Etiam vel lorem at est elementum varius.
-                Proin luctus ipsum nibh, quis suscipit nunc pulvinar et. Donec varius sapien dui. Nullam eget tortor
-                maximus lorem tristique ullamcorper. Donec dapibus turpis id mollis porttitor. Donec elementum nisl
-                nulla, vitae iaculis mi semper ac. Quisque sollicitudin sem erat, congue porta leo semper bibendum.
-            </p>
-            <p>
-                Integer mi dui, tristique sed diam nec, molestie auctor arcu. Suspendisse non quam neque. Phasellus quis
-                nisi varius, faucibus nibh sed, aliquam libero. Vestibulum ante ipsum primis in faucibus orci luctus et
-                ultrices posuere cubilia curae; Proin vestibulum nisl id lacus aliquam, in eleifend sem maximus. Ut
-                condimentum, lacus at feugiat suscipit, mi augue feugiat dolor, ut iaculis sapien dolor vitae nisi.
-                Etiam tempus ultrices pellentesque. Cras hendrerit sapien sit amet venenatis commodo.
-            </p>
-            <p>
-                Pellentesque sapien turpis, rhoncus quis sollicitudin faucibus, vulputate eget tortor. Duis vitae
-                pellentesque justo. Sed dignissim in dolor non suscipit. Donec ac ipsum auctor, sollicitudin nibh non,
-                pharetra nunc. Phasellus facilisis, metus nec vehicula rutrum, elit tortor lobortis justo, id iaculis
-                lacus massa ut risus. Cras hendrerit sed enim id rhoncus. Ut aliquet rutrum ullamcorper. Proin dictum
-                libero eu libero mattis sollicitudin. Sed quis nibh felis. Donec gravida tincidunt lorem nec convallis.
-                Curabitur posuere a mauris et sagittis. Aliquam nec tempor turpis, a pharetra enim. Vestibulum imperdiet
-                sodales volutpat. Quisque volutpat quam nec neque fermentum sagittis. Ut ultricies odio ligula, eu
-                placerat dolor luctus a. Vivamus commodo aliquet ex, vel imperdiet diam vehicula sit amet.
-            </p>
-        </div>
-        <div class="row text-center">
-            <div class="col">
-                <div class="card">
-                    <div class="card-body cursor" (click)="prosumer()">
-                        <div class="row">
-                            <div class="col d-flex text-center justify-content-center">
-                                <h4 class="mx-3 my-3">Aggiungi Prosumer</h4>
-                                <mat-icon class="mt-3">account_circle</mat-icon>
+<div class="d-flex flex-column flex-grow-1">
+    <app-headers></app-headers>
+    <div class="container-fluid">
+
+        <section>
+            <div class="content mb-5">
+                <!-- <h3> <em class="col d-flex justify-content-center mt-3">L'energia che si rinnova</em> </h3> -->
+                <div class="col d-flex justify-content-center">
+                    <!-- <img src="./img/energy.jpg" alt="energia solare" width="500px"> -->
+                    <div class="row col-10 m-auto mt-5">
+
+                        <div class="col-sm-6 my-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title"><b>CER Alessandria</b></h4>
+                                    <div class="row col-10 mt-5">
+                                        <div class="col-md-8">
+                                            <!-- TABLE: Volume Energia -->
+                                            <div class="box box-info">
+                                                <div class="box-header with-border">
+                                                    <h4 class="box-title"> <em>Incremento degli ultimi 7 giorni </em>
+                                                    </h4>
+                                                    <!-- <div class="box-tools pull-right"> 10 utenti
+                                                </div> -->
+                                                </div><!-- /.box-header -->
+                                                <div class="box-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table no-margin">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Descrizione</th>
+                                                                    <th>Valore (kWh)</th>
+                                                                    <th>inc</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Autoconsumo diretto</td>
+                                                                    <td>33,20</td>
+                                                                    <td><span class="text-red"><i
+                                                                                class="fa fa-angle-down"></i>
+                                                                            33,44</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Energia generata</td>
+                                                                    <td>755,04</td>
+                                                                    <td>
+                                                                        <span class="text-green"><i
+                                                                                class="fa fa-angle-up"></i>
+                                                                            8,10%</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Immissione in rete</td>
+                                                                    <td>722,84</td>
+                                                                    <td>
+                                                                        <span class="text-green"><i
+                                                                                class="fa fa-angle-up"></i>
+                                                                            9,95%</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div><!-- /.table-responsive -->
+                                                </div><!-- /.box -->
+                                                <div class="box-footer clearfix">
+                                                    <a (click)="dashboard()"
+                                                        class="btn btn-sm btn-success btn-flat pull-left text-white">
+                                                        <i class="glyphicon glyphicon-home"
+                                                            style="margin-right: 5px;"></i>
+                                                        Dashboard</a>
+                                                    <!-- <a href="parametri.html"
+                                                    class="btn btn-sm btn-default btn-flat pull-right">
+                                                    parametri</a> -->
+                                                </div>
+                                            </div><!-- /.col -->
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45211.60338882542!2d8.556058419943199!3d44.90858568301426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47877431ed416505%3A0xd647f5990f0c62d9!2sAlessandria%20AL!5e0!3m2!1sit!2sit!4v1686561010953!5m2!1sit!2sit"
+                                                width="300" height="200" style="border:0;" allowfullscreen=""
+                                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body cursor" (click)="producter()">
-                        <div class="row">
-                            <div class="col d-flex text-center justify-content-center">
-                                <h4 class="mx-3 my-3">Aggiungi Produttore</h4>
-                                <mat-icon class="mt-3"> business</mat-icon>
+                        <div class="col-sm-6 my-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title"><b>CER Asti</b></h4>
+                                    <div class="row col-10 mt-5">
+                                        <div class="col-md-8">
+                                            <!-- TABLE: Volume Energia -->
+                                            <div class="box box-info">
+                                                <div class="box-header with-border">
+                                                    <h4 class="box-title"> <em>Incremento degli ultimi 7 giorni </em>
+                                                    </h4>
+                                                    <!-- <div class="box-tools pull-right"> 10 utenti
+                                                </div> -->
+                                                </div><!-- /.box-header -->
+                                                <div class="box-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table no-margin">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Descrizione</th>
+                                                                    <th>Valore (kWh)</th>
+                                                                    <th>inc</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Autoconsumo diretto</td>
+                                                                    <td>20,20</td>
+                                                                    <td><span class="text-red"><i
+                                                                                class="fa fa-angle-down"></i>
+                                                                            12,44</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Energia generata</td>
+                                                                    <td>529,04</td>
+                                                                    <td>
+                                                                        <span class="text-green"><i
+                                                                                class="fa fa-angle-up"></i>
+                                                                            4,40%</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Immissione in rete</td>
+                                                                    <td>466,84</td>
+                                                                    <td>
+                                                                        <span class="text-green"><i
+                                                                                class="fa fa-angle-up"></i>
+                                                                            7,65%</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div><!-- /.table-responsive -->
+                                                </div><!-- /.box -->
+                                                <div class="box-footer clearfix">
+                                                    <a (click)="dashboard()"
+                                                        class="btn btn-sm btn-success btn-flat pull-left text-white">
+                                                        <i class="glyphicon glyphicon-home"
+                                                            style="margin-right: 5px;"></i>
+                                                        Dashboard</a>
+                                                    <!-- <a href="parametri.html"
+                                                    class="btn btn-sm btn-default btn-flat pull-right">
+                                                    parametri</a> -->
+                                                </div>
+                                            </div><!-- /.col -->
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1458448.9531610203!2d8.68674181063658!3d44.40332029475741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787933cd27f8277%3A0xe7347bb67fb9d561!2s14100%20Asti%20AT!5e0!3m2!1sit!2sit!4v1686561203041!5m2!1sit!2sit"
+                                                width="300" height="200" style="border:0;" allowfullscreen=""
+                                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="col-sm-6 my-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title"><b>CER Matera</b></h4>
+                                    <div class="row col-10 mt-5">
+                                        <div class="col-md-8">
+                                            <!-- TABLE: Volume Energia -->
+                                            <div class="box box-info">
+                                                <div class="box-header with-border">
+                                                    <h4 class="box-title"> <em>Incremento degli ultimi 7 giorni </em>
+                                                    </h4>
+                                                    <!-- <div class="box-tools pull-right"> 10 utenti
+                                                </div> -->
+                                                </div><!-- /.box-header -->
+                                                <div class="box-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table no-margin">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Descrizione</th>
+                                                                    <th>Valore (kWh)</th>
+                                                                    <th>inc</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Autoconsumo diretto</td>
+                                                                    <td>25,20</td>
+                                                                    <td><span class="text-green"><i
+                                                                                class="fa fa-angle-up"></i>
+                                                                            25,14</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Energia generata</td>
+                                                                    <td>150,04</td>
+                                                                    <td>
+                                                                        <span class="text-red"><i
+                                                                                class="fa fa-angle-down"></i>
+                                                                            2,10%</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Immissione in rete</td>
+                                                                    <td>800,84</td>
+                                                                    <td>
+                                                                        <span class="text-green"><i
+                                                                                class="fa fa-angle-up"></i>
+                                                                            10,65%</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div><!-- /.table-responsive -->
+                                                </div><!-- /.box -->
+                                                <div class="box-footer clearfix">
+                                                    <a (click)="dashboard()"
+                                                        class="btn btn-sm btn-success btn-flat pull-left text-white">
+                                                        <i class="glyphicon glyphicon-home"
+                                                            style="margin-right: 5px;"></i>
+                                                        Dashboard</a>
+                                                    <!-- <a href="parametri.html"
+                                                    class="btn btn-sm btn-default btn-flat pull-right">
+                                                    parametri</a> -->
+                                                </div>
+                                            </div><!-- /.col -->
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24211.387857632533!2d16.579529348712352!3d40.6646372227786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13477ee2482b152b%3A0x8f6a4ae10da9360!2s75100%20Matera%20MT!5e0!3m2!1sit!2sit!4v1686561044713!5m2!1sit!2sit"
+                                                width="300" height="200" style="border:0;" allowfullscreen=""
+                                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 my-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title"><b>CER Valdarno</b></h4>
+                                    <div class="row col-10 mt-5">
+                                        <div class="col-md-8">
+                                            <!-- TABLE: Volume Energia -->
+                                            <div class="box box-info">
+                                                <div class="box-header with-border">
+                                                    <h4 class="box-title"> <em>Incremento degli ultimi 7 giorni </em>
+                                                    </h4>
+                                                    <!-- <div class="box-tools pull-right"> 10 utenti
+                                                </div> -->
+                                                </div><!-- /.box-header -->
+                                                <div class="box-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table no-margin">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Descrizione</th>
+                                                                    <th>Valore (kWh)</th>
+                                                                    <th>inc</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Autoconsumo diretto</td>
+                                                                    <td>54,20</td>
+                                                                    <td><span class="text-green"><i
+                                                                                class="fa fa-angle-up"></i>
+                                                                            20,44</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Energia generata</td>
+                                                                    <td>420,04</td>
+                                                                    <td>
+                                                                        <span class="text-green"><i
+                                                                                class="fa fa-angle-up"></i>
+                                                                            4,10%</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Immissione in rete</td>
+                                                                    <td>975,84</td>
+                                                                    <td>
+                                                                        <span class="text-green"><i
+                                                                                class="fa fa-angle-up"></i>
+                                                                            12,95%</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div><!-- /.table-responsive -->
+                                                </div><!-- /.box -->
+                                                <div class="box-footer clearfix">
+                                                    <a (click)="dashboard()"
+                                                        class="btn btn-sm btn-success btn-flat pull-left text-white">
+                                                        <i class="glyphicon glyphicon-home"
+                                                            style="margin-right: 5px;"></i>
+                                                        Dashboard</a>
+                                                    <!-- <a href="parametri.html"
+                                                    class="btn btn-sm btn-default btn-flat pull-right">
+                                                    parametri</a> -->
+                                                </div>
+                                            </div><!-- /.col -->
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11528.401088539897!2d11.239700272809472!3d43.750014487872534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a515fcef39c49%3A0xf6465df1bbd074b7!2sValdarno!5e0!3m2!1sit!2sit!4v1686560296406!5m2!1sit!2sit"
+                                                width="300" height="200" style="border:0;" allowfullscreen=""
+                                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
+
             </div>
-        </div>
+        </section>
     </div>
+
 </div>
