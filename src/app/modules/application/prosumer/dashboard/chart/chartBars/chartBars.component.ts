@@ -47,28 +47,28 @@ export class ChartBarsComponent implements OnInit {
   ];
 
   public barChartData_: ChartData<'bar'> = {
-    labels: ["Gen",
-      "Feb",
-      "Mar",
-      "Apr",
-      "Mag",
-      "Giu",
-      "Lug",
-      "Ago",
-      "Set",
-      "Ott",
-      "Nov",
-      "Dic"],
+    labels: ["2022 Gen",
+      "2022 Feb",
+      "2022 Mar",
+      "2022 Apr",
+      "2022 Mag",
+      "2022 Giu",
+      "2022 Lug",
+      "2022 Ago",
+      "2022 Set",
+      "2022 Ott",
+      "2022 Nov",
+      "2022 Dic"],
     datasets: [
       {
         data: this.data[0]?.values,
-        label: 'Energia prodotta',
+        label: 'Energia prodotta (kWh)',
         backgroundColor: 'rgba(148,159,177,0.2)',
         borderColor: 'rgba(148,159,177,1)',
       },
       {
         data: this.data[1]?.values,
-        label: 'Energia consumata',
+        label: 'Energia consumata (kWh)',
         backgroundColor: 'rgba(77,83,96,0.2)',
         borderColor: 'rgba(77,83,96,1)',
       }
