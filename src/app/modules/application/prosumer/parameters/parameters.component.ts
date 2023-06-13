@@ -37,6 +37,11 @@ export class ParametersComponent extends BaseComponent implements OnInit {
         incentivo_immissione_f1: this.selected_entity.data.parameters.incentivo_immissione_f1,
         incentivo_immissione_f2: this.selected_entity.data.parameters.incentivo_immissione_f2,
         incentivo_immissione_f3: this.selected_entity.data.parameters.incentivo_immissione_f3,
+        incentivo_autoconsumo_virtuale: this.selected_entity.data.parameters.incentivo_autoconsumo_virtuale,
+        incentivo_autoconsumo_virtuale_produttori: this.selected_entity.data.parameters.incentivo_autoconsumo_virtuale_produttori,
+        degrado_pannelli: this.selected_entity.data.parameters.degrado_pannelli,
+        manutenzione_tasse: this.selected_entity.data.parameters.manutenzione_tasse,
+        co2_kwh: this.selected_entity.data.parameters.co2_kwh,
         costo_pannelli: this.selected_entity.data.parameters.costo_pannelli
       });
     } else {
@@ -49,6 +54,8 @@ export class ParametersComponent extends BaseComponent implements OnInit {
         manutenzione_tasse: this.selected_entity.data.parameters.manutenzione_tasse,
         co2_kwh: this.selected_entity.data.parameters.co2_kwh,
         co2_albero: this.selected_entity.data.parameters.co2_albero,
+        energia_consumata: this.selected_entity.data.parameters.energia_consumata,
+        energia_generata: this.selected_entity.data.parameters.energia_generata
       });
     }
   }

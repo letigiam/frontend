@@ -180,6 +180,11 @@ export class BaseComponent implements OnInit {
           incentivo_immissione_f1: 0.21,
           incentivo_immissione_f2: 0.21,
           incentivo_immissione_f3: 0.21,
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
           costo_pannelli: 1400
         }
       },
@@ -348,6 +353,11 @@ export class BaseComponent implements OnInit {
           incentivo_immissione_f1: 0.23,
           incentivo_immissione_f2: 0.24,
           incentivo_immissione_f3: 0.25,
+          incentivo_autoconsumo_virtuale: 0.17,
+          incentivo_autoconsumo_virtuale_produttori: 68,
+          degrado_pannelli: 0.75,
+          manutenzione_tasse: 13.4,
+          co2_kwh: 0.50,
           costo_pannelli: 1513
         }
       },
@@ -516,6 +526,11 @@ export class BaseComponent implements OnInit {
           incentivo_immissione_f1: 0.20,
           incentivo_immissione_f2: 0.22,
           incentivo_immissione_f3: 0.24,
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
           costo_pannelli: 1380
         }
       },
@@ -679,7 +694,18 @@ export class BaseComponent implements OnInit {
           {
             values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
           }
-        ]
+        ],
+        parameters: {
+          incentivo_immissione_f1: 0.20,
+          incentivo_immissione_f2: 0.22,
+          incentivo_immissione_f3: 0.24,
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
+          costo_pannelli: 1380
+        }
       },
       map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11528.401088539897!2d11.239700272809472!3d43.750014487872534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a515fcef39c49%3A0xf6465df1bbd074b7!2sValdarno!5e0!3m2!1sit!2sit!4v1686560296406!5m2!1sit!2sit'
     }
@@ -802,7 +828,9 @@ export class BaseComponent implements OnInit {
           degrado_pannelli: 0.9,
           manutenzione_tasse: 15,
           co2_kwh: 0.53,
-          co2_albero: 167
+          co2_albero: 167,
+          energia_consumata: 235.01,
+          energia_generata: 1827.72
         }
       },
     },
@@ -921,7 +949,9 @@ export class BaseComponent implements OnInit {
           degrado_pannelli: 0.9,
           manutenzione_tasse: 15,
           co2_kwh: 0.53,
-          co2_albero: 167
+          co2_albero: 167,
+          energia_consumata: 235.01,
+          energia_generata: 1827.72
         }
       },
     },
@@ -1040,7 +1070,9 @@ export class BaseComponent implements OnInit {
           degrado_pannelli: 0.9,
           manutenzione_tasse: 15,
           co2_kwh: 0.53,
-          co2_albero: 167
+          co2_albero: 167,
+          energia_consumata: 235.01,
+          energia_generata: 1827.72
         }
       },
     },
@@ -1159,7 +1191,9 @@ export class BaseComponent implements OnInit {
           degrado_pannelli: 0.9,
           manutenzione_tasse: 15,
           co2_kwh: 0.53,
-          co2_albero: 167
+          co2_albero: 167,
+          energia_consumata: 235.01,
+          energia_generata: 1827.72
         }
       },
     },
@@ -1278,7 +1312,9 @@ export class BaseComponent implements OnInit {
           degrado_pannelli: 0.9,
           manutenzione_tasse: 15,
           co2_kwh: 0.53,
-          co2_albero: 167
+          co2_albero: 167,
+          energia_consumata: 235.01,
+          energia_generata: 1827.72
         }
       },
     },
@@ -1397,7 +1433,9 @@ export class BaseComponent implements OnInit {
           degrado_pannelli: 0.9,
           manutenzione_tasse: 15,
           co2_kwh: 0.53,
-          co2_albero: 167
+          co2_albero: 167,
+          energia_consumata: 235.01,
+          energia_generata: 1827.72
         }
       },
     },
@@ -1516,7 +1554,9 @@ export class BaseComponent implements OnInit {
           degrado_pannelli: 0.9,
           manutenzione_tasse: 15,
           co2_kwh: 0.53,
-          co2_albero: 167
+          co2_albero: 167,
+          energia_consumata: 235.01,
+          energia_generata: 1827.72
         }
       },
     },
@@ -1635,7 +1675,9 @@ export class BaseComponent implements OnInit {
           degrado_pannelli: 0.9,
           manutenzione_tasse: 15,
           co2_kwh: 0.53,
-          co2_albero: 167
+          co2_albero: 167,
+          energia_consumata: 235.01,
+          energia_generata: 1827.72
         }
       },
     },
@@ -1754,7 +1796,9 @@ export class BaseComponent implements OnInit {
           degrado_pannelli: 0.9,
           manutenzione_tasse: 15,
           co2_kwh: 0.53,
-          co2_albero: 167
+          co2_albero: 167,
+          energia_consumata: 235.01,
+          energia_generata: 1827.72
         }
       },
     },
@@ -1873,7 +1917,9 @@ export class BaseComponent implements OnInit {
           degrado_pannelli: 0.9,
           manutenzione_tasse: 15,
           co2_kwh: 0.53,
-          co2_albero: 167
+          co2_albero: 167,
+          energia_consumata: 235.01,
+          energia_generata: 1827.72
         }
       },
     },
@@ -1992,7 +2038,9 @@ export class BaseComponent implements OnInit {
           degrado_pannelli: 0.9,
           manutenzione_tasse: 15,
           co2_kwh: 0.53,
-          co2_albero: 167
+          co2_albero: 167,
+          energia_consumata: 235.01,
+          energia_generata: 1827.72
         }
       },
     }
