@@ -5,7 +5,7 @@
   <div class="container-fluid px-5">
     <section>
       <h1>Dashboard - {{ selected_entity.name }}</h1>
-      <div class="row mx-3 my-4">
+      <div class="row my-4">
         <div class="col-md-6">
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
@@ -84,11 +84,11 @@
         </div>
       </div>
 
-      <div class="row mx-3 my-4">
+      <div class="row my-4">
         <app-chartBars [data]="selected_entity?.data.charts"></app-chartBars>
       </div>
 
-      <div class="row mx-3 my-4">
+      <div class="row my-4">
         <div class="col-md-6" *ngIf="selected_entity?.data.valori_annuali">
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
@@ -152,6 +152,46 @@
         <div class="col" *ngFor="let location of locations">
           <div *ngIf="location" class="m-auto d-flex justify-content-center">
             <img [src]="location.png | safe" width="900" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12" *ngIf="users">
+          <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Lista dei prosumer della CER</h3>
+              <div class="box-tools pull-right">
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="table-responsive">
+                <table class="table no-margin">
+                  <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>POD</th>
+                      <th>ACD</th>
+                      <th>ACV</th>
+                      <th>Energia generata</th>
+                      <th>Energia consumata</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="let user of users.slice(selected_entity.data.users.min, selected_entity.data.users.max)">
+                      <td>{{ user.name }}</td>
+                      <td>{{ user.data.prosumer.pod }}</td>
+                      <td>{{ user.data.prosumer.acd }} %</td>
+                      <td>{{ user.data.prosumer.acv }} %</td>
+                      <td>{{ user.data.parameters.energia_generata }} kWh</td>
+                      <td>{{ user.data.parameters.energia_consumata }} kWh</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>

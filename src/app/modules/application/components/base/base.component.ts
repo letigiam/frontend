@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./base.component.scss']
 })
 export class BaseComponent implements OnInit {
+  Math = Math;
+
   currencyOptions = {
     align: "right",
     allowNegative: false,
@@ -22,6 +24,10 @@ export class BaseComponent implements OnInit {
       name: 'Alessandria',
       data:
       {
+        users: {
+          min: 1,
+          max: 4
+        },
         economici: [
           {
             label: 'Investimento totale',
@@ -196,6 +202,10 @@ export class BaseComponent implements OnInit {
       name: 'Asti',
       data:
       {
+        users: {
+          min: 4,
+          max: 7
+        },
         economici: [
           {
             label: 'Investimento totale',
@@ -369,6 +379,10 @@ export class BaseComponent implements OnInit {
       name: 'Matera',
       data:
       {
+        users: {
+          min: 7,
+          max: 8
+        },
         economici: [
           {
             label: 'Investimento totale',
@@ -542,6 +556,10 @@ export class BaseComponent implements OnInit {
       name: 'Valdarno',
       data:
       {
+        users: {
+          min: 8,
+          max: 11
+        },
         economici: [
           {
             label: 'Investimento totale',
@@ -832,6 +850,11 @@ export class BaseComponent implements OnInit {
           co2_albero: 167,
           energia_consumata: 235.01,
           energia_generata: 1827.72
+        },
+        prosumer: {
+          pod: 'IT001E00000001',
+          acd: 6.85,
+          acv: 0
         }
       },
     },
@@ -953,6 +976,11 @@ export class BaseComponent implements OnInit {
           co2_albero: 167,
           energia_consumata: 235.01,
           energia_generata: 1827.72
+        },
+        prosumer: {
+          pod: 'IT001E00000002',
+          acd: 10.16,
+          acv: 0
         }
       },
     },
@@ -1074,6 +1102,11 @@ export class BaseComponent implements OnInit {
           co2_albero: 167,
           energia_consumata: 235.01,
           energia_generata: 1827.72
+        },
+        prosumer: {
+          pod: 'IT001E00000003',
+          acd: 4.78,
+          acv: 0
         }
       },
     },
@@ -1195,6 +1228,11 @@ export class BaseComponent implements OnInit {
           co2_albero: 167,
           energia_consumata: 235.01,
           energia_generata: 1827.72
+        },
+        prosumer: {
+          pod: 'IT001E00000004',
+          acd: 7.99,
+          acv: 0
         }
       },
     },
@@ -1316,6 +1354,11 @@ export class BaseComponent implements OnInit {
           co2_albero: 167,
           energia_consumata: 235.01,
           energia_generata: 1827.72
+        },
+        prosumer: {
+          pod: 'IT001E00000005',
+          acd: 3.89,
+          acv: 0
         }
       },
     },
@@ -1437,6 +1480,11 @@ export class BaseComponent implements OnInit {
           co2_albero: 167,
           energia_consumata: 235.01,
           energia_generata: 1827.72
+        },
+        prosumer: {
+          pod: 'IT001E00000006',
+          acd: 5.66,
+          acv: 0
         }
       },
     },
@@ -1558,6 +1606,11 @@ export class BaseComponent implements OnInit {
           co2_albero: 167,
           energia_consumata: 235.01,
           energia_generata: 1827.72
+        },
+        prosumer: {
+          pod: 'IT001E00000007',
+          acd: 14.97,
+          acv: 0
         }
       },
     },
@@ -1679,6 +1732,11 @@ export class BaseComponent implements OnInit {
           co2_albero: 167,
           energia_consumata: 235.01,
           energia_generata: 1827.72
+        },
+        prosumer: {
+          pod: 'IT001E00000008',
+          acd: 6.77,
+          acv: 0
         }
       },
     },
@@ -1800,6 +1858,11 @@ export class BaseComponent implements OnInit {
           co2_albero: 167,
           energia_consumata: 235.01,
           energia_generata: 1827.72
+        },
+        prosumer: {
+          pod: 'IT001E00000009',
+          acd: 6.85,
+          acv: 0
         }
       },
     },
@@ -1921,6 +1984,11 @@ export class BaseComponent implements OnInit {
           co2_albero: 167,
           energia_consumata: 235.01,
           energia_generata: 1827.72
+        },
+        prosumer: {
+          pod: 'IT001E00000010',
+          acd: 4.74,
+          acv: 0
         }
       },
     },
@@ -2042,6 +2110,11 @@ export class BaseComponent implements OnInit {
           co2_albero: 167,
           energia_consumata: 235.01,
           energia_generata: 1827.72
+        },
+        prosumer: {
+          pod: 'IT001E00000011',
+          acd: 9.45,
+          acv: 0
         }
       },
     }

@@ -201,11 +201,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
       1000);
   }
 
-
-
-
   getFormattedDate(date: moment.MomentInput, format: string | undefined) {
     return moment(date).locale('it').format(format);
   }
-
 }
