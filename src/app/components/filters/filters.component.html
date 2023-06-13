@@ -22,7 +22,8 @@
           </a>
           <ul class="dropdown-menu">
             <li *ngFor="let user of users">
-              <a class="dropdown-item" [routerLink]="user.id ? '/app/' + url + '/utenti/' + user.id : '/app/' + url"
+              <a class="dropdown-item"
+                [routerLink]="user.id ? '/app/' + url + '/utenti/' + user.id : '/app/' + url + '/cer/1'"
                 [ngClass]="{'active': user.id == selected_entity.id}"
                 [class.disabled]="!user.id  && url == 'parametri'">{{
                 user.name }}</a>

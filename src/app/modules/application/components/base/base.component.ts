@@ -686,7 +686,7 @@ export class BaseComponent implements OnInit {
   ];
 
   users: any = [
-    // { id: null, name: 'Tutti' },
+    { id: null, name: 'Tutti' },
     {
       id: 1,
       name: 'Mario Rossi',
@@ -928,6 +928,958 @@ export class BaseComponent implements OnInit {
     {
       id: 3,
       name: 'Andrea Bianchi',
+      data:
+      {
+        economici: [
+          {
+            label: 'Investimento totale',
+            value: 58250,
+            unit: '€',
+          },
+          {
+            label: 'Risparmio autoconsumo annuo',
+            value: 5379,
+            unit: '€',
+          },
+          {
+            label: 'Tariffa incentivante',
+            value: 1462,
+            unit: '€',
+          },
+          {
+            label: 'Vendita energia',
+            value: 1318,
+            unit: '€',
+          },
+          {
+            label: 'Totale ricavo annuo',
+            value: 8777,
+            unit: '€',
+          },
+          {
+            label: 'Tempo di ritorno dell\'investimento',
+            value: 8.4,
+            unit: 'anni',
+          }
+        ],
+        energetici: [
+          {
+            label: 'Emissioni CO2 evitate',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+          {
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            label: 'Consumo fotovoltaico annuo',
+            value: 2.9,
+            unit: '%',
+          },
+          {
+            label: 'Producibilità',
+            value: 23654,
+            unit: 'kwH',
+          }
+        ],
+        tails: [
+          {
+            icon: 'fa-area-chart',
+            label: 'CO2 risparmiata',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            icon: 'fa-battery',
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            icon: 'fa-certificate',
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-bolt',
+            label: 'Cessione rete',
+            value: 64106,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-sun',
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+        ],
+        charts: [
+          {
+            values: [8718.390672884574, 10941.336335085494, 15477.816687180904, 21356.74421265277, 29180.4338877199, 27563.13030972426, 28921.680381390004, 26564.394887272043, 18897.159183827967, 15551.172855382327, 10866.926297344533, 7966.814289535674]
+          },
+          {
+            values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
+          }
+        ],
+        parameters: {
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
+          co2_albero: 167
+        }
+      },
+    },
+    {
+      id: 4,
+      name: 'Michele Tomaselli',
+      data:
+      {
+        economici: [
+          {
+            label: 'Investimento totale',
+            value: 58250,
+            unit: '€',
+          },
+          {
+            label: 'Risparmio autoconsumo annuo',
+            value: 5379,
+            unit: '€',
+          },
+          {
+            label: 'Tariffa incentivante',
+            value: 1462,
+            unit: '€',
+          },
+          {
+            label: 'Vendita energia',
+            value: 1318,
+            unit: '€',
+          },
+          {
+            label: 'Totale ricavo annuo',
+            value: 8777,
+            unit: '€',
+          },
+          {
+            label: 'Tempo di ritorno dell\'investimento',
+            value: 8.4,
+            unit: 'anni',
+          }
+        ],
+        energetici: [
+          {
+            label: 'Emissioni CO2 evitate',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+          {
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            label: 'Consumo fotovoltaico annuo',
+            value: 2.9,
+            unit: '%',
+          },
+          {
+            label: 'Producibilità',
+            value: 23654,
+            unit: 'kwH',
+          }
+        ],
+        tails: [
+          {
+            icon: 'fa-area-chart',
+            label: 'CO2 risparmiata',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            icon: 'fa-battery',
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            icon: 'fa-certificate',
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-bolt',
+            label: 'Cessione rete',
+            value: 64106,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-sun',
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+        ],
+        charts: [
+          {
+            values: [8718.390672884574, 10941.336335085494, 15477.816687180904, 21356.74421265277, 29180.4338877199, 27563.13030972426, 28921.680381390004, 26564.394887272043, 18897.159183827967, 15551.172855382327, 10866.926297344533, 7966.814289535674]
+          },
+          {
+            values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
+          }
+        ],
+        parameters: {
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
+          co2_albero: 167
+        }
+      },
+    },
+    {
+      id: 5,
+      name: 'Ettore Casalini',
+      data:
+      {
+        economici: [
+          {
+            label: 'Investimento totale',
+            value: 58250,
+            unit: '€',
+          },
+          {
+            label: 'Risparmio autoconsumo annuo',
+            value: 5379,
+            unit: '€',
+          },
+          {
+            label: 'Tariffa incentivante',
+            value: 1462,
+            unit: '€',
+          },
+          {
+            label: 'Vendita energia',
+            value: 1318,
+            unit: '€',
+          },
+          {
+            label: 'Totale ricavo annuo',
+            value: 8777,
+            unit: '€',
+          },
+          {
+            label: 'Tempo di ritorno dell\'investimento',
+            value: 8.4,
+            unit: 'anni',
+          }
+        ],
+        energetici: [
+          {
+            label: 'Emissioni CO2 evitate',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+          {
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            label: 'Consumo fotovoltaico annuo',
+            value: 2.9,
+            unit: '%',
+          },
+          {
+            label: 'Producibilità',
+            value: 23654,
+            unit: 'kwH',
+          }
+        ],
+        tails: [
+          {
+            icon: 'fa-area-chart',
+            label: 'CO2 risparmiata',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            icon: 'fa-battery',
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            icon: 'fa-certificate',
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-bolt',
+            label: 'Cessione rete',
+            value: 64106,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-sun',
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+        ],
+        charts: [
+          {
+            values: [8718.390672884574, 10941.336335085494, 15477.816687180904, 21356.74421265277, 29180.4338877199, 27563.13030972426, 28921.680381390004, 26564.394887272043, 18897.159183827967, 15551.172855382327, 10866.926297344533, 7966.814289535674]
+          },
+          {
+            values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
+          }
+        ],
+        parameters: {
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
+          co2_albero: 167
+        }
+      },
+    },
+    {
+      id: 6,
+      name: 'Giovanni Vicini',
+      data:
+      {
+        economici: [
+          {
+            label: 'Investimento totale',
+            value: 58250,
+            unit: '€',
+          },
+          {
+            label: 'Risparmio autoconsumo annuo',
+            value: 5379,
+            unit: '€',
+          },
+          {
+            label: 'Tariffa incentivante',
+            value: 1462,
+            unit: '€',
+          },
+          {
+            label: 'Vendita energia',
+            value: 1318,
+            unit: '€',
+          },
+          {
+            label: 'Totale ricavo annuo',
+            value: 8777,
+            unit: '€',
+          },
+          {
+            label: 'Tempo di ritorno dell\'investimento',
+            value: 8.4,
+            unit: 'anni',
+          }
+        ],
+        energetici: [
+          {
+            label: 'Emissioni CO2 evitate',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+          {
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            label: 'Consumo fotovoltaico annuo',
+            value: 2.9,
+            unit: '%',
+          },
+          {
+            label: 'Producibilità',
+            value: 23654,
+            unit: 'kwH',
+          }
+        ],
+        tails: [
+          {
+            icon: 'fa-area-chart',
+            label: 'CO2 risparmiata',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            icon: 'fa-battery',
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            icon: 'fa-certificate',
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-bolt',
+            label: 'Cessione rete',
+            value: 64106,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-sun',
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+        ],
+        charts: [
+          {
+            values: [8718.390672884574, 10941.336335085494, 15477.816687180904, 21356.74421265277, 29180.4338877199, 27563.13030972426, 28921.680381390004, 26564.394887272043, 18897.159183827967, 15551.172855382327, 10866.926297344533, 7966.814289535674]
+          },
+          {
+            values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
+          }
+        ],
+        parameters: {
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
+          co2_albero: 167
+        }
+      },
+    },
+    {
+      id: 7,
+      name: 'Carmelo Caserta',
+      data:
+      {
+        economici: [
+          {
+            label: 'Investimento totale',
+            value: 58250,
+            unit: '€',
+          },
+          {
+            label: 'Risparmio autoconsumo annuo',
+            value: 5379,
+            unit: '€',
+          },
+          {
+            label: 'Tariffa incentivante',
+            value: 1462,
+            unit: '€',
+          },
+          {
+            label: 'Vendita energia',
+            value: 1318,
+            unit: '€',
+          },
+          {
+            label: 'Totale ricavo annuo',
+            value: 8777,
+            unit: '€',
+          },
+          {
+            label: 'Tempo di ritorno dell\'investimento',
+            value: 8.4,
+            unit: 'anni',
+          }
+        ],
+        energetici: [
+          {
+            label: 'Emissioni CO2 evitate',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+          {
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            label: 'Consumo fotovoltaico annuo',
+            value: 2.9,
+            unit: '%',
+          },
+          {
+            label: 'Producibilità',
+            value: 23654,
+            unit: 'kwH',
+          }
+        ],
+        tails: [
+          {
+            icon: 'fa-area-chart',
+            label: 'CO2 risparmiata',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            icon: 'fa-battery',
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            icon: 'fa-certificate',
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-bolt',
+            label: 'Cessione rete',
+            value: 64106,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-sun',
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+        ],
+        charts: [
+          {
+            values: [8718.390672884574, 10941.336335085494, 15477.816687180904, 21356.74421265277, 29180.4338877199, 27563.13030972426, 28921.680381390004, 26564.394887272043, 18897.159183827967, 15551.172855382327, 10866.926297344533, 7966.814289535674]
+          },
+          {
+            values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
+          }
+        ],
+        parameters: {
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
+          co2_albero: 167
+        }
+      },
+    },
+    {
+      id: 8,
+      name: 'Vincenzo Leotta',
+      data:
+      {
+        economici: [
+          {
+            label: 'Investimento totale',
+            value: 58250,
+            unit: '€',
+          },
+          {
+            label: 'Risparmio autoconsumo annuo',
+            value: 5379,
+            unit: '€',
+          },
+          {
+            label: 'Tariffa incentivante',
+            value: 1462,
+            unit: '€',
+          },
+          {
+            label: 'Vendita energia',
+            value: 1318,
+            unit: '€',
+          },
+          {
+            label: 'Totale ricavo annuo',
+            value: 8777,
+            unit: '€',
+          },
+          {
+            label: 'Tempo di ritorno dell\'investimento',
+            value: 8.4,
+            unit: 'anni',
+          }
+        ],
+        energetici: [
+          {
+            label: 'Emissioni CO2 evitate',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+          {
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            label: 'Consumo fotovoltaico annuo',
+            value: 2.9,
+            unit: '%',
+          },
+          {
+            label: 'Producibilità',
+            value: 23654,
+            unit: 'kwH',
+          }
+        ],
+        tails: [
+          {
+            icon: 'fa-area-chart',
+            label: 'CO2 risparmiata',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            icon: 'fa-battery',
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            icon: 'fa-certificate',
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-bolt',
+            label: 'Cessione rete',
+            value: 64106,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-sun',
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+        ],
+        charts: [
+          {
+            values: [8718.390672884574, 10941.336335085494, 15477.816687180904, 21356.74421265277, 29180.4338877199, 27563.13030972426, 28921.680381390004, 26564.394887272043, 18897.159183827967, 15551.172855382327, 10866.926297344533, 7966.814289535674]
+          },
+          {
+            values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
+          }
+        ],
+        parameters: {
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
+          co2_albero: 167
+        }
+      },
+    },
+    {
+      id: 9,
+      name: 'Gaetano Agnesi',
+      data:
+      {
+        economici: [
+          {
+            label: 'Investimento totale',
+            value: 58250,
+            unit: '€',
+          },
+          {
+            label: 'Risparmio autoconsumo annuo',
+            value: 5379,
+            unit: '€',
+          },
+          {
+            label: 'Tariffa incentivante',
+            value: 1462,
+            unit: '€',
+          },
+          {
+            label: 'Vendita energia',
+            value: 1318,
+            unit: '€',
+          },
+          {
+            label: 'Totale ricavo annuo',
+            value: 8777,
+            unit: '€',
+          },
+          {
+            label: 'Tempo di ritorno dell\'investimento',
+            value: 8.4,
+            unit: 'anni',
+          }
+        ],
+        energetici: [
+          {
+            label: 'Emissioni CO2 evitate',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+          {
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            label: 'Consumo fotovoltaico annuo',
+            value: 2.9,
+            unit: '%',
+          },
+          {
+            label: 'Producibilità',
+            value: 23654,
+            unit: 'kwH',
+          }
+        ],
+        tails: [
+          {
+            icon: 'fa-area-chart',
+            label: 'CO2 risparmiata',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            icon: 'fa-battery',
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            icon: 'fa-certificate',
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-bolt',
+            label: 'Cessione rete',
+            value: 64106,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-sun',
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+        ],
+        charts: [
+          {
+            values: [8718.390672884574, 10941.336335085494, 15477.816687180904, 21356.74421265277, 29180.4338877199, 27563.13030972426, 28921.680381390004, 26564.394887272043, 18897.159183827967, 15551.172855382327, 10866.926297344533, 7966.814289535674]
+          },
+          {
+            values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
+          }
+        ],
+        parameters: {
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
+          co2_albero: 167
+        }
+      },
+    },
+    {
+      id: 10,
+      name: 'Gabriele Giuffrida',
+      data:
+      {
+        economici: [
+          {
+            label: 'Investimento totale',
+            value: 58250,
+            unit: '€',
+          },
+          {
+            label: 'Risparmio autoconsumo annuo',
+            value: 5379,
+            unit: '€',
+          },
+          {
+            label: 'Tariffa incentivante',
+            value: 1462,
+            unit: '€',
+          },
+          {
+            label: 'Vendita energia',
+            value: 1318,
+            unit: '€',
+          },
+          {
+            label: 'Totale ricavo annuo',
+            value: 8777,
+            unit: '€',
+          },
+          {
+            label: 'Tempo di ritorno dell\'investimento',
+            value: 8.4,
+            unit: 'anni',
+          }
+        ],
+        energetici: [
+          {
+            label: 'Emissioni CO2 evitate',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+          {
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            label: 'Consumo fotovoltaico annuo',
+            value: 2.9,
+            unit: '%',
+          },
+          {
+            label: 'Producibilità',
+            value: 23654,
+            unit: 'kwH',
+          }
+        ],
+        tails: [
+          {
+            icon: 'fa-area-chart',
+            label: 'CO2 risparmiata',
+            value: 12.04,
+            unit: 'tonnellate',
+          },
+          {
+            icon: 'fa-battery',
+            label: 'Autoconsumo fisico',
+            value: 58,
+            unit: '%',
+          },
+          {
+            icon: 'fa-certificate',
+            label: 'Autoconsumo diretto',
+            value: 158892,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-bolt',
+            label: 'Cessione rete',
+            value: 64106,
+            unit: 'kWh',
+          },
+          {
+            icon: 'fa-sun',
+            label: 'Energia prodotta',
+            value: 48726.9,
+            unit: 'kWh',
+          },
+        ],
+        charts: [
+          {
+            values: [8718.390672884574, 10941.336335085494, 15477.816687180904, 21356.74421265277, 29180.4338877199, 27563.13030972426, 28921.680381390004, 26564.394887272043, 18897.159183827967, 15551.172855382327, 10866.926297344533, 7966.814289535674]
+          },
+          {
+            values: [7881.782942076948, 9693.174557132972, 12893.808491555767, 15136.894716135968, 17711.300865012417, 16623.057577372063, 17317.328242035743, 10006.632055532391, 15204.982631529636, 12747.70193847012, 10096.335334405723, 7473.583754783867]
+          }
+        ],
+        parameters: {
+          incentivo_autoconsumo_virtuale: 0.12,
+          incentivo_autoconsumo_virtuale_produttori: 70,
+          degrado_pannelli: 0.9,
+          manutenzione_tasse: 15,
+          co2_kwh: 0.53,
+          co2_albero: 167
+        }
+      },
+    },
+    {
+      id: 11,
+      name: 'Emanuele Costa',
       data:
       {
         economici: [

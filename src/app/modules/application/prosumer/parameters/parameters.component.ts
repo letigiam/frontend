@@ -39,8 +39,6 @@ export class ParametersComponent extends BaseComponent implements OnInit {
         incentivo_immissione_f3: this.selected_entity.data.parameters.incentivo_immissione_f3,
         costo_pannelli: this.selected_entity.data.parameters.costo_pannelli
       });
-
-
     } else {
       this.selected_entity = this.users.find((user: any) => user.id == this.route.snapshot.params['utente']);
 
