@@ -188,6 +188,7 @@ export class BaseComponent implements OnInit {
           costo_pannelli: 1400
         }
       },
+      png: './assets/img/flusso_energia.png',
       map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45211.60338882542!2d8.556058419943199!3d44.90858568301426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47877431ed416505%3A0xd647f5990f0c62d9!2sAlessandria%20AL!5e0!3m2!1sit!2sit!4v1686561010953!5m2!1sit!2sit'
     },
     {

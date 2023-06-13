@@ -148,6 +148,12 @@
             </div>
           </div>
         </div>
+
+        <div class="col" *ngFor="let location of locations">
+          <div *ngIf="location" class="m-auto d-flex justify-content-center">
+            <img [src]="location.png | safe" width="900" alt="">
+          </div>
+        </div>
       </div>
     </section>
   </div>

@@ -12,6 +12,7 @@ import { BaseComponent } from '../../components/base/base.component';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent extends BaseComponent implements OnInit {
+  override locations: any = this.locations;
   type: 'cer' | 'user' = 'cer';
   selected_entity: any;
 
@@ -75,6 +76,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
     this.route.url.subscribe(value => {
       this.refreshData();
     });
+    this.locations = this.locations.filter((location: any) => location.id != null)
   }
 
   refreshData() {
